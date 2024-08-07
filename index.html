@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="ct-navigation">
+            <div class="ct-header">
+                <div class="header-logo"> imagem sults </div>
+                <ul class="progressbar">
+                    <li><span>E-mail</span></li>
+                    <li><span>Tipo de conta</span></li>
+                    <li><span>País</span></li>
+                    <li><span>Verificação em duas etapas</span></li>
+                    <li><span>Senha</span></li>
+                </ul>
+                <div class="header-close-btn">
+                    <button type="button" class="close-btn" aria-label="Fechar">
+                        <svg width="24" height="24" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                            <path
+                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="gp-main">
+
+        <section id="ct-email" class="slide">
+            <div class="teste">
+                <div class="title">
+                    <h1>Crie sua conta SULTS grátis</h1>
+                    <p>subtitulo</p>
+                </div>
+
+                <form id="form-email">
+                    <label for="email">Primeiro, insira o seu endereço de e-mail </label>
+                    <input id="email" name="email" autocomplete="email" type="email" class="form-input"
+                        title="insira o seu endereço de e-mail" aria-label="insira o seu endereço de e-mail" value>
+
+                    <div role="alert" class="login-error-message">
+                        <span class="error-circle">
+                            <span class="icon-error" aria-hidden="true" role="none">
+                                <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                                    <path
+                                        d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </span>
+
+                        <div id="error-email" class="login-error-message"></div>
+                    </div>
+
+                    <button class="btn-form" type="submit">Próximo</button>
+                </form>
+
+                <div id="errorModal" style="display: none;">
+                    <button id="closeModalError">Fechar</button>
+                </div>
+
+                <div class="social-login">
+                    <p class="subtitle-social">Ou entre com</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-button google" aria-label="Entrar com Google"></button>
+                        <button type="button" class="social-button facebook" aria-label="Entrar com Facebook"></button>
+                        <button type="button" class="social-button apple" aria-label="Entrar com Apple"></button>
+                    </div>
+                </div>
+                <p class="termos">Ao se cadastrar, você aceita os nossos <a target="_blank"
+                        href="/terms-and-conditions">Termos de Uso</a> e a nossa <a target="_blank"
+                        href="/privacy-policy">Política de Privacidade</a>.</p>
+            </div>
+        </section>
+
+        <section id="ct-phone" class="slide">
+            <div class="teste">
+                <div class="teste2">
+                <button class="back-button" type="button" aria-live="off">
+                    <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                        </path>
+                    </svg>
+                    <span class="back-button-text">Voltar</span>
+                </button>
+                <div class="content">
+                    <div class="title">
+                        <h1>Verifique o seu número de telefone com um código</h1>
+                        <p>Isso nos ajudará a entrar em contato</p>
+                    </div>
+
+                    <div class="ct-form">
+                        <form id="form-phone">
+                            <label for="phone-number" class="states-number">Número de telefone</label>
+                            <div class="inputPhone">
+                                <select name="uf" id="uf">
+                                    <option value="0">UF</option>
+                                </select>
+
+                                <input id="phone" name="phone" autocomplete="phone" type="phone" class="form-input"
+                                    title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
+                                    value>
+                            </div>
+
+
+                            <div role="alert" class="alert-error-email">
+                                <span class="error-circle">
+                                    <span class="icon-error" aria-hidden="true" role="none">
+                                        <svg width="16" height="16" fill="currentColor" focusable="false"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                            </path>
+                                        </svg></span>
+                                </span>
+                                <div id="error-phone" class="login-error-message"> </div>
+                            </div>
+                            <button class="btn-form" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- nome -->
+        <section id="ct-nome" class="slide">
+            <div class="teste">
+                <button class="back-button" onclick="prevLevel(3);" type="button" aria-live="off">
+                    <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                        </path>
+                    </svg>
+                    <span class="back-button-text">Voltar</span>
+                </button>
+                    <div class="ct-form">
+                        <div class="title">
+                            <h1>titulo</h1>
+                            <p>subtitulo</p>
+                        </div>
+                        <form id="form-nome">
+                            <label for="nome"></label>
+                            <input id="nome" name="nome" autocomplete="nome" type="nome" class="form-input"
+                                title="insira o seu nome" aria-label="insira o seu nome">
+
+                            <div role="alert" class="login-error-message">
+                                <span class="error-circle">
+                                    <span class="icon-error" aria-hidden="true" role="none">
+                                        <svg width="16" height="16" fill="currentColor" focusable="false"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </span>
+
+                                <div id="error-name" class="login-error-message"></div>
+                            </div>
+
+                            <button class="btn-form" onclick="nextLevel();" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                
+            </div>
+        </section>
+
+
+
+
+
+        <!-- company -->
+        <section id="ct-company" class="slide">
+            <div class="teste">
+                <div  class="teste2">
+                    <button class="back-button" onclick="prevLevel(3);" type="button" aria-live="off">
+                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                            <path
+                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                            </path>
+                        </svg>
+                        <span class="back-button-text">Voltar</span>
+                    </button>
+                    <div class="ct-form">
+                        <div class="title">
+                            <h1>titulo</h1>
+                            <p>subtitulo</p>
+                        </div>
+
+                        <form id="form-company">
+                            <label for="company"></label>
+                            <input id="company" name="company" autocomplete="company" type="company" class="form-input"
+                                title="insira o seu nome da empresa" aria-label="insira o nome da empresa">
+
+                            <div role="alert" class="login-error-message">
+                                <span class="error-circle">
+                                    <span class="icon-error" aria-hidden="true" role="none">
+                                        <svg width="16" height="16" fill="currentColor" focusable="false"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </span>
+
+                                <div id="error-company" class="login-error-message"></div>
+                            </div>
+
+                            <button class="btn-form" onclick="nextLevel();" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
