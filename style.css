@@ -100,6 +100,7 @@ a {
     background-color: #7d7d7d;
 }
 
+
 .progressbar li:first-child:after {
     content: none;
 }
@@ -142,20 +143,19 @@ section{
     width: 100%;
     max-width: 1100px;
     padding-right: 32px;
-    padding-left: 32px;
+    padding-left: 32px; 
+
 }
 
 .teste2 {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    margin: 0 auto;
 }
 
-.content {
+.teste2:has(div) {
     width: 100%;
     max-width: 565px;
-    /* margin-left: calc(25% - 4%); */
 }
-
 
 .subtitle-social { 
     text-align: start !important;
@@ -305,7 +305,7 @@ section{
 
 /*back button*/
 .back-button {
-    /* left: -10%; */
+    left: 64px;
     top: 25px;
     height: 30px;
     border: none;
@@ -314,7 +314,7 @@ section{
     font-weight: 600;
     background: none;
     margin-top: 16px;
-    position: relative;
+    position: absolute;
     text-align: center;
     align-items: center;
     padding: 0 !important;
@@ -507,4 +507,13 @@ p {
 .states-number{
     font-size: 14px;
     color: #5d7079;
+}
+
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
 }
