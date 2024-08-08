@@ -60,63 +60,77 @@ a {
 }
 
 /* BARRA DE PROGRESSO */
-.progressbar {
-    width: 70%;
-    display: flex; /*ALTERAR*/
-    position: relative;
-}
-
-.progressbar li {
-    width: 25%;
-    float: left;
-    font-size: 12px;
-    color: #7d7d7d;
-    position: relative;
-    list-style-type: none;
-}
-
-.progressbar li:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    display: block;
-    line-height: 30px;
-    border-radius: 50%;
-    transition: all .8s;
-    margin: 0 auto 10px auto;
-    border: 2px solid #7d7d7d;
-    background-color: #7d7d7d;
-}
-
-.progressbar li:after {
-    top: 7px;
-    left: -50%;
+.stepper {
     width: 100%;
-    z-index: -1;
-    content: '';
-    height: 2px;
+   
+    position: relative;
+    padding: 0 24px;
+}
+
+.progress {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #55b776;
     position: absolute;
-    transition: all .8s;
-    background-color: #7d7d7d;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
-
-.progressbar li:first-child:after {
-    content: none;
-}
-
-.progressbar li.active:before {
-    transition: all .8s;
-    border-color: #55b776;
+.progress-bar:after {
+    float: right;
+    width: 8px;
+    height: 8px;
+    margin-top: -3px;
+    margin-right: -4px;
+    content: "";
+    border-radius: 4px;
     background-color: #55b776;
 }
 
-.progressbar li.active:after {
-    transition: all .8s;
-    background-color: #55b776;
+.steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
 }
+
+.step {
+    position: absolute;
+    font-size: 14px;
+    color: #7d7d7d;
+}
+
+.step-label {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.step.active .step-label,
+.step.active {
+    color: #55b776;
+    font-weight: bold;
+}
+
 
 /* FORMULARIO INICIAL */
+
+.gp-main {
+    margin-top: 70px;
+}
+
  .account-options{
     display: flex; 
     padding: 2rem 1.5rem; 
@@ -144,12 +158,13 @@ section{
     max-width: 1100px;
     padding-right: 32px;
     padding-left: 32px; 
+    margin: 0 auto;
 
 }
 
 .teste2 {
     position: relative;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .teste2:has(div) {
@@ -270,7 +285,6 @@ section{
 }
 
 .error-circle {
-    
     width: 16px;
     height: 16px;
     margin-top: 4px;
@@ -409,22 +423,11 @@ p {
         display: block;
     }
 
-    #ct-email, .step-content-mobile, .slide, .options{
-        padding: 0;
-    }
 
-    .gp-main {
-        padding: 0 16px;
-    }
-
-    section {
-        padding: 0 8px;
-    }
 
     .termos {
        width: 100%;
     }
-
 }
 
 .options {
@@ -509,8 +512,7 @@ p {
     color: #5d7079;
 }
 
-
-.slide {
+.slide, .sp {
     display: none;
 }
 

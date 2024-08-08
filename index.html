@@ -13,12 +13,26 @@
         <nav class="ct-navigation">
             <div class="ct-header">
                 <div class="header-logo"> imagem sults </div>
-                <ul class="progressbar">
-                    <li><span>Nome</span></li>
-                    <li><span>Nome da empresa</span></li>
-                    <li><span>E-mail corporativo</span></li>
-                    <li><span>Telefone</span></li>
-                </ul>
+                <div class="stepper">
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <ol class="steps">
+                        <li class="step clickable" aria-current="false" style="left: 0%;">
+                            <button type="button" class="step-label">Nome</button>
+                        </li>
+                        <li class="step active" aria-current="step" style="left: 25%;">
+                            <span class="step-label">Nome da empresa</span>
+                        </li>
+                        <li class="step" aria-current="false" style="left: 60%;">
+                            <span class="step-label">E-mail corporativo</span>
+                        </li>
+                        <li class="step" aria-current="false" style="left: 90%; width: 100%;">
+                            <span class="step-label">Telefone com DDD</span>
+                        </li>
+                    </ol>
+                </div>
+                
                 <div class="header-close-btn">
                     <button type="button" class="close-btn" aria-label="Fechar">
                         <svg width="24" height="24" fill="currentColor" focusable="false" viewBox="0 0 24 24">
