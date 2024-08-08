@@ -62,60 +62,59 @@ a {
 /* BARRA DE PROGRESSO */
 .stepper {
     width: 100%;
-   
     position: relative;
     padding: 0 24px;
 }
 
 .progress {
     width: 100%;
-    background-color: #e0e0e0;
     height: 4px;
-    margin-bottom: 10px;
     position: relative;
+    margin-bottom: 10px;
+    background-color: #e0e0e0;
 }
 
 .progress-bar {
-    height: 100%;
-    background-color: #55b776;
-    position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    position: absolute;
+    background-color: #55b776;
     transition: width 0.3s ease;
 }
 
 .progress-bar:after {
-    float: right;
     width: 8px;
     height: 8px;
+    content: "";
+    float: right;
     margin-top: -3px;
     margin-right: -4px;
-    content: "";
     border-radius: 4px;
     background-color: #55b776;
 }
 
 .steps {
-    display: flex;
-    justify-content: space-between;
     padding: 0;
     margin: 0;
+    display: flex;
     list-style: none;
     position: relative;
+    justify-content: space-between;
 }
 
 .step {
-    position: absolute;
     font-size: 14px;
     color: #7d7d7d;
+    position: absolute;
 }
 
 .step-label {
-    display: inline-block;
-    background: none;
-    border: none;
     padding: 0;
+    border: none;
     cursor: pointer;
+    background: none;
+    display: inline-block;
 }
 
 .step.active .step-label,
@@ -126,7 +125,6 @@ a {
 
 
 /* FORMULARIO INICIAL */
-
 .gp-main {
     margin-top: 70px;
 }
@@ -137,8 +135,6 @@ a {
     justify-content: center;
 }
 
-
-
 /* .gp-form {
     width: 526px;
     padding: 2rem;
@@ -147,24 +143,22 @@ a {
 
 section{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .teste{
     width: 100%;
-    max-width: 1100px;
-    padding-right: 32px;
-    padding-left: 32px; 
     margin: 0 auto;
-
+    padding: 0 32px;
+    max-width: 1100px;
 }
 
 .teste2 {
-    position: relative;
     margin: auto;
+    position: relative;
 }
 
 .teste2:has(div) {
@@ -305,8 +299,8 @@ section{
 }
 
 .login-error-message {
-    margin-top: 4px;
     display: none; /*ALTERAR*/
+    margin-top: 4px;
     color: #a8200d;
 }
 
