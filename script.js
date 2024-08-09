@@ -6,14 +6,45 @@ const progressStaps = document.querySelectorAll(".steps .step")
 
 let formStepNum = 0;
 
-nextBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        formStepNum++;
-        updateFormSteps();
-        updateProgressbar();
-        validateForm( email, phone);
+
+for (let i = 0; i < nextBtns.length; i++) {
+    nextBtns[i].addEventListener("click", function (event) {
+        event.preventDefault();
+        inputsValid = validateInputs(this);
+
+        let name = document.querySelector("#nome").value;
+
+
+          if(!validateForm(name, email, phone)) {
+            
+            return;
+        }
+        else {
+            formStepNum++;
+            updateFormSteps();
+            updateProgressbar();
+        }
     });
-});
+}
+
+function validateInputs(ths) {
+    let inputsValid = true;
+
+    const inputs = ths.parentElement.parentElement.querySelectorAll("input");
+    console.log(inputs);
+    for (let i = 0; i < inputs.length; i++) {
+      
+        const valid = inputs[i].checkValidity();
+        if (!valid) {
+            inputsValid = false;
+            inputs[i].classList.add("login-error-message");
+        } else {
+            inputs[i].classList.remove("login-error-message");
+        }
+    }
+    return inputsValid;
+}
+
 
 
 prevBtns.forEach(btn => {
@@ -55,25 +86,30 @@ function RegisterFormSubmit(event) {
 
 
     let email = document.querySelector("#email").value, 
-    phone = document.querySelector("#phone").value;
+    phone = document.querySelector("#phone").value, 
+    name = document.querySelector("#nome");
 
 
-    console.log("Email:", email); // Adicionado para depuração
+    
 
     //se retornar falso a validação falhou e isso inpedira do cosigo abaixo ser executado 
-    if(!validateForm(email, phone))
+    if(!validateForm(name, email, phone))
         return;
 
     //Carregamento
     document.querySelector(".spinner").style.display = "inline-block";
    
     //envia os dados 
-    sendAsgard( email, phone);
+    
+    sendAsgard(name, email, phone);
+    
+    console.log("Email:", email); 
     console.log("phone:" + phone);
+    console.log("nome:" + name);
 }
 
 //Apos validação dos dados faz a criação da conta e manda um negocio para o funil 
-function sendAsgard(email) 
+function sendAsgard(name, email, phone) 
 {
     let a = new XMLHttpRequest();
     (a.withCredentials = !1), 
@@ -116,9 +152,13 @@ function sendAsgard(email)
 }
 
 //Faz a validação dos campos do formulario
-function validateForm( email, phone) {
+function validateForm(name, email, phone) {
     let isValid = true;
     // clearErrors(); 
+    if (name === "") {
+        showError("error-name", "Nome: Preenchimento obrigatório");
+        isValid = false;
+    }
 
     if(email === "") {
         showError("error-email", "Email: Preenchimento obrigatório");
