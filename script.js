@@ -1,3 +1,6 @@
+
+// https://codepen.io/isaiaphiliph/pen/RwppXKG
+
 const prevBtns = document.querySelectorAll(".back-button");
 const nextBtns = document.querySelectorAll(".btn-form");
 const progress = document.querySelector(".progress-bar");
@@ -17,6 +20,8 @@ for (let i = 0; i < nextBtns.length; i++) {
             updateFormSteps();
             updateProgressbar();
         }
+       
+
     });
 }
 
@@ -31,6 +36,7 @@ function validateInputs(ths) {
             name = document.querySelector("#nome").value, 
             company = document.querySelector("#company").value;
 
+           
       
         if (inputs[i].value == "") {
             inputsValid = false;
@@ -84,7 +90,10 @@ function updateFormSteps() {
             formStep.classList.remove("active");
     });
     formSteps[formStepNum].classList.add("active");
+  
 }
+
+
 
 function updateProgressbar() {
     const stepWidth = 100 / (progressStaps.length - 1);
