@@ -55,7 +55,6 @@ function validateForm() {
         showError("error-phone", "O telefone informado não é válido");
         isValid = false;
     } 
-
     return isValid;
 }
 
