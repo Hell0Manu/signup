@@ -68,6 +68,7 @@ a {
 /* BARRA DE PROGRESSO */
 .stepper {
     width: 100%;
+    max-width: 600px;
     position: relative;
     padding: 0 24px;
     order: 1;
@@ -75,7 +76,7 @@ a {
 
 .progress {
     width: 100%;
-    height: 4px;
+    height: 2px;
     position: relative;
     margin-bottom: 10px;
     background-color: #e0e0e0;
@@ -86,7 +87,7 @@ a {
     left: 0;
     height: 100%;
     position: absolute;
-    background-color: #55b776;
+    background-color: #00acac;
     transition: width 0.3s ease;
 }
 
@@ -98,7 +99,7 @@ a {
     margin-top: -3px;
     margin-right: -4px;
     border-radius: 4px;
-    background-color: #55b776;
+    background-color: #00acac;
 }
 
 .steps {
@@ -126,7 +127,7 @@ a {
 
 .step.active .step-label,
 .step.active {
-    color: #55b776;
+    color: #00acac;
     font-weight: bold;
 }
 
@@ -163,14 +164,21 @@ section{
 }
 
 .teste2 {
-    margin: auto;
+    width: 100%;
+    max-width: 1100px;
     position: relative;
 }
 
-.teste2:has(div) {
+.ct-form {
     width: 100%;
     max-width: 565px;
+    margin-left: 25%;
 }
+
+/* .teste2:has(div) {
+    width: 100%;
+    max-width: 565px;
+} */
 
 .subtitle-social { 
     text-align: start !important;
@@ -279,11 +287,6 @@ section{
 }
 
 /*VALIDAÇÃO EMAIL*/
-.alert-error-email {
-    margin: 8px;
-    display: none;
-}
-
 .error-circle {
     width: 16px;
     height: 16px;
@@ -298,18 +301,20 @@ section{
     justify-content: center;
 }
 
-.icon-error, .error-circle {
+/* .icon-error, .error-circle {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .login-error-message {
     display: flex; /*ALTERAR*/
     margin-top: 4px;
     color: #a8200d;
 }
-
+.login-error-message .error-circle {
+    display: none; 
+}
 .login-error-message p {
     margin: 0;
     font-size: 14px;
@@ -421,10 +426,15 @@ p {
     .ct-header {
         flex-wrap: wrap;
     }
+    .ct-form {
+        margin-left: 16%;
+    }
+    
+
 }
 
 @media (max-width:575px) {
-    .step-content, .back-button {
+    .step-content{
         display: none;
     }
 
@@ -439,6 +449,17 @@ p {
     .step {
         display: none;
     }
+    .ct-form {
+        margin-left: 0;
+    }
+    .back-button {
+        position: absolute;
+        width: 0;
+    }
+    .header-logo {
+        visibility: hidden;
+    }
+    
 }
 
 .options {
@@ -528,5 +549,6 @@ p {
 }
 
 .slide.active {
-    display: block;
+    display:flex;
 }
+
