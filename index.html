@@ -1,72 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
-    <header>
-        <nav class="ct-navigation">
-            <div class="ct-header">
-                <div class="header-logo"> imagem sults </div>
-                <div class="header-close-btn">
-                    <button type="button" class="close-btn" aria-label="Fechar">
-                        <svg width="24" height="24" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+    <body>
+        <header>
+            <nav class="ct-navigation">
+                <div class="ct-header">
+                    <div class="header-logo"> imagem sults </div>
+                    <div class="header-close-btn">
+                        <button type="button" class="close-btn"
+                            aria-label="Fechar">
+                            <svg width="24" height="24" fill="currentColor"
+                                focusable="false" viewBox="0 0 24 24">
+                                <path
+                                    d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="stepper">
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <ol class="steps">
+                            <li class="step clickable" aria-current="false"
+                                style="left: 0%;">
+                                <button type="button"
+                                    class="step-label">Nome</button>
+                            </li>
+                            <li class="step active" aria-current="step"
+                                style="left: 25%;">
+                                <span class="step-label">Nome da empresa</span>
+                            </li>
+                            <li class="step" aria-current="false"
+                                style="left: 65%;">
+                                <span class="step-label">E-mail
+                                    corporativo</span>
+                            </li>
+                            <li class="step" aria-current="false"
+                                style="left: 100%;">
+                                <span class="step-label">Telefone</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <main class="gp-main">
+
+            <!-- nome -->
+            <section id="ct-nome" class="slide active">
+                <div class="teste">
+                    <div class="teste2">
+                        <div class="ct-form">
+                            <div class="title">
+                                <h1>Crie sua conta SULTS grátis</h1>
+                                <p>Centralize e aumente a eficiência em toda
+                                    operação</p>
+                            </div>
+                            <form id="form-nome">
+
+                                <label for="nome">Primeiro, insira seu
+                                    nome</label>
+                                <input id="nome" name="nome" autocomplete="nome"
+                                    type="nome" class="form-input"
+                                    title="insira o seu nome"
+                                    aria-label="insira o seu nome">
+
+                                <div role="alert" class="login-error-message">
+                                    <span class="error-circle">
+                                        <span class="icon-error"
+                                            aria-hidden="true" role="none">
+                                            <svg width="16" height="16"
+                                                fill="currentColor"
+                                                focusable="false"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                    <div id="error-name"
+                                        class="login-error-message"></div>
+                                </div>
+
+                                <button class="btn-form"
+                                    type="button">Continuar</button>
+                            </form>
+                        </div>
+                        <p class="termos">Ao se cadastrar, você aceita os nossos
+                            <a target="_blank"
+                                href="/terms-and-conditions">Termos de Uso</a> e
+                            a nossa
+                            <a target="_blank" href="/privacy-policy">Política
+                                de Privacidade</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- company -->
+            <section id="ct-company" class="slide">
+                <div class="teste2">
+                    <button class="back-button" type="button"
+                        aria-live="off">
+                        <svg width="16" height="16" fill="currentColor"
+                            focusable="false" viewBox="0 0 24 24">
                             <path
-                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
                             </path>
                         </svg>
+                        <span class="back-button-text">Voltar</span>
                     </button>
-                </div>
-                <div class="stepper">
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <ol class="steps">
-                        <li class="step clickable" aria-current="false" style="left: 0%;">
-                            <button type="button" class="step-label">Nome</button>
-                        </li>
-                        <li class="step active" aria-current="step" style="left: 25%;">
-                            <span class="step-label">Nome da empresa</span>
-                        </li>
-                        <li class="step" aria-current="false" style="left: 65%;">
-                            <span class="step-label">E-mail corporativo</span>
-                        </li>
-                        <li class="step" aria-current="false" style="left: 100%;">
-                            <span class="step-label">Telefone</span>
-                        </li>
-                    </ol>
-                </div>
-                
 
-            </div>
-        </nav>
-    </header>
-    <main class="gp-main">
+                    <div class="teste">
 
-        <!-- nome -->
-        <section id="ct-nome" class="slide active">
-            <div class="teste">
-                <div class="teste2">
-                    <div class="ct-form">
-                        <div class="title">
-                            <h1>Crie sua conta SULTS grátis</h1>
-                            <p>Centralize e aumente a eficiência em toda operação</p>
+                        <div class="ct-form">
+                            <div class="title">
+                                <h1>Nome da empresa
+                                </h1>
+                                <p>Informe sua empresa</p>
+                            </div>
+
+                            <form id="form-company">
+                                <label for="company"></label>
+                                <input id="company" name="company" autocomplete="company" type="company"
+                                    class="form-input" title="insira o seu nome da empresa"
+                                    aria-label="insira o nome da empresa">
+
+                                <div role="alert" class="login-error-message">
+                                    <span class="error-circle">
+                                        <span class="icon-error"
+                                            aria-hidden="true" role="none">
+                                            <svg width="16" height="16"
+                                                fill="currentColor"
+                                                focusable="false"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </span>
+
+                                    <div id="error-company" class="login-error-message"></div>
+                                </div>
+
+                                <button class="btn-form"
+                                    type="button">Próximo</button>
+                            </form>
                         </div>
-                        <form id="form-nome">
+                    </div>
+                </div>
+            </section>
 
-                            <label for="nome">Primeiro, insira seu nome</label>
-                            <input id="nome" name="nome" autocomplete="nome" type="nome" class="form-input"
-                                title="insira o seu nome" aria-label="insira o seu nome">
+            <!-- email -->
+            <section id="ct-email" class="slide">
+                <div class="teste">
+                    <div class="teste2">
+                        <button class="back-button" type="button"
+                            aria-live="off">
+                            <svg width="16" height="16" fill="currentColor"
+                                focusable="false" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                                </path>
+                            </svg>
+                            <span class="back-button-text">Voltar</span>
+                        </button>
+                        <div class="title">
+                            <h1>Email</h1>
+                            <p>Insira o seu endereço de e-mail</p>
+                        </div>
+
+                        <form id="form-email">
+                            <label for="email">Insira o seu endereço de e-mail
+                            </label>
+                            <input id="email" name="email" autocomplete="email" type="email" class="form-input"
+                                title="insira o seu endereço de e-mail" aria-label="insira o seu endereço de e-mail"
+                                value>
 
                             <div role="alert" class="login-error-message">
                                 <span class="error-circle">
-                                    <span class="icon-error" aria-hidden="true" role="none">
-                                        <svg width="16" height="16" fill="currentColor" focusable="false"
+                                    <span class="icon-error" aria-hidden="true"
+                                        role="none">
+                                        <svg width="16" height="16"
+                                            fill="currentColor"
+                                            focusable="false"
                                             viewBox="0 0 24 24">
                                             <path
                                                 d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
@@ -74,111 +202,19 @@
                                         </svg>
                                     </span>
                                 </span>
-                                <div id="error-name" class="login-error-message"></div>
+
+                                <div id="error-email" class="login-error-message"></div>
                             </div>
 
-                            <button class="btn-form" type="button">Continuar</button>
+                            <button class="btn-form"
+                                type="button">Próximo</button>
                         </form>
-                    </div>
-                    <p class="termos">Ao se cadastrar, você aceita os nossos 
-                        <a target="_blank" href="/terms-and-conditions">Termos de Uso</a> e a nossa 
-                        <a target="_blank" href="/privacy-policy">Política de Privacidade</a>.
-                    </p>
-                </div>
-            </div>
-        </section>
 
-                <!-- company -->
-                <section id="ct-company" class="slide">
-                    <div class="teste2">
-                    <div class="teste">
-                        <button class="back-button" type="button" aria-live="off">
-                            <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                                <path
-                                    d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                                </path>
-                            </svg>
-                            <span class="back-button-text">Voltar</span>
-                        </button>
-                        
-                            <div class="ct-form">
-                                <div class="title">
-                                    <h1>Company</h1>
-                                    <p>subtitulo</p>
-                                </div>
-        
-                                <form id="form-company">
-                                    <label for="company"></label>
-                                    <input id="company" name="company" autocomplete="company" type="company" class="form-input"
-                                        title="insira o seu nome da empresa" aria-label="insira o nome da empresa">
-        
-                                    <div role="alert" class="login-error-message">
-                                        <span class="error-circle">
-                                            <span class="icon-error" aria-hidden="true" role="none">
-                                                <svg width="16" height="16" fill="currentColor" focusable="false"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                        </span>
-        
-                                        <div id="error-company" class="login-error-message"></div>
-                                    </div>
-        
-                                    <button class="btn-form" type="button">Próximo</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-        <!-- email -->
-        <section id="ct-email" class="slide">
-            <div class="teste">
-                <div class="teste2">
-                    <button class="back-button" type="button" aria-live="off">
-                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                            <path
-                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                            </path>
-                        </svg>
-                        <span class="back-button-text">Voltar</span>
-                    </button>
-                    <div class="title">
-                        <h1>Email</h1>
-                        <p>subtitulo</p>
-                    </div>
-
-                    <form id="form-email">
-                        <label for="email">Insira o seu endereço de e-mail </label>
-                        <input id="email" name="email" autocomplete="email" type="email" class="form-input"
-                            title="insira o seu endereço de e-mail" aria-label="insira o seu endereço de e-mail" value>
-
-                        <div role="alert" class="login-error-message">
-                            <span class="error-circle">
-                                <span class="icon-error" aria-hidden="true" role="none">
-                                    <svg width="16" height="16" fill="currentColor" focusable="false"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-                                        </path>
-                                    </svg>
-                                </span>
-                            </span>
-
-                            <div id="error-email" class="login-error-message"></div>
+                        <div id="errorModal" style="display: none;">
+                            <button id="closeModalError">Fechar</button>
                         </div>
 
-                        <button class="btn-form" type="button">Próximo</button>
-                    </form>
-
-                    <div id="errorModal" style="display: none;">
-                        <button id="closeModalError">Fechar</button>
-                    </div>
-
-                    <!-- <div class="social-login">
+                        <!-- <div class="social-login">
                         <p class="subtitle-social">Ou entre com</p>
                         <div class="social-buttons">
                             <button type="button" class="social-button google" aria-label="Entrar com Google"></button>
@@ -187,62 +223,137 @@
                         </div>
                     </div> -->
 
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+            <!-- phone -->
+            <section id="ct-phone" class="slide">
+                <div class="teste">
+                    <div class="teste2">
+                        <button class="back-button" type="button"
+                            aria-live="off">
+                            <svg width="16" height="16" fill="currentColor"
+                                focusable="false" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                                </path>
+                            </svg>
+                            <span class="back-button-text">Voltar</span>
+                        </button>
+                        <div class="content">
+                            <div class="title">
+                                <h1>Informe seu telefone ou celular</h1>
+                                <p>Isso nos ajudará a entrar em contato</p>
+                            </div>
 
-        <!-- phone -->
-        <section id="ct-phone" class="slide">
-            <div class="teste">
-                <div class="teste2">
-                    <button class="back-button" type="button" aria-live="off">
-                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                            <path
-                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                            </path>
-                        </svg>
-                        <span class="back-button-text">Voltar</span>
-                    </button>
-                    <div class="content">
-                        <div class="title">
-                            <h1>Verifique o seu número de telefone com um código</h1>
-                            <p>Isso nos ajudará a entrar em contato</p>
-                        </div>
+                            <div class="ct-form">
+                                <form id="form-phone">
+                                    <label for="phone-number" class="states-number">Número de telefone</label>
+                                    <div class="inputPhone">
+                                        <select name="uf" id="uf">
+                                            <option value>DDD</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="24">24</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="31">31</option>
+                                            <option value="32">32</option>
+                                            <option value="33">33</option>
+                                            <option value="34">34</option>
+                                            <option value="35">35</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                            <option value="44">44</option>
+                                            <option value="45">45</option>
+                                            <option value="46">46</option>
+                                            <option value="47">47</option>
+                                            <option value="48">48</option>
+                                            <option value="49">49</option>
+                                            <option value="51">51</option>
+                                            <option value="53">53</option>
+                                            <option value="54">54</option>
+                                            <option value="55">55</option>
+                                            <option value="61">61</option>
+                                            <option value="62">62</option>
+                                            <option value="63">63</option>
+                                            <option value="64">64</option>
+                                            <option value="65">65</option>
+                                            <option value="66">66</option>
+                                            <option value="67">67</option>
+                                            <option value="68">68</option>
+                                            <option value="69">69</option>
+                                            <option value="71">71</option>
+                                            <option value="73">73</option>
+                                            <option value="74">74</option>
+                                            <option value="75">75</option>
+                                            <option value="77">77</option>
+                                            <option value="79">79</option>
+                                            <option value="81">81</option>
+                                            <option value="82">82</option>
+                                            <option value="83">83</option>
+                                            <option value="84">84</option>
+                                            <option value="85">85</option>
+                                            <option value="86">86</option>
+                                            <option value="87">87</option>
+                                            <option value="88">88</option>
+                                            <option value="89">89</option>
+                                            <option value="91">91</option>
+                                            <option value="92">92</option>
+                                            <option value="93">93</option>
+                                            <option value="94">94</option>
+                                            <option value="95">95</option>
+                                            <option value="96">96</option>
+                                            <option value="97">97</option>
+                                            <option value="98">98</option>
+                                            <option value="99">99</option>
+                                        </select>
+                                        <input id="phone" name="phone" autocomplete="phone" type="phone"  class="form-input"
+                                            title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
+                                            oninput="applyPhoneMask(this)" maxlength="15"
+                                            value>
+                                    </div>
 
-                        <div class="ct-form">
-                            <form id="form-phone">
-                                <label for="phone-number" class="states-number">Número de telefone</label>
-                                <div class="inputPhone">
-                                    <select name="uf" id="uf">
-                                        <option value="0">UF</option>
-                                    </select>
-                                    <input id="phone" name="phone" autocomplete="phone" type="phone" class="form-input"
-                                        title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
-                                        value>
-                                </div>
+                                    <div role="alert" class="login-error-message">
+                                        <span class="error-circle">
+                                            <span class="icon-error"
+                                                aria-hidden="true" role="none">
+                                                <svg width="16" height="16"
+                                                    fill="currentColor"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                                    </path>
+                                                </svg></span>
+                                        </span>
+                                        <div id="error-phone" class="login-error-message"> </div>
+                                    </div>
 
-                                <div role="alert" class="alert-error-email">
-                                    <span class="error-circle">
-                                        <span class="icon-error" aria-hidden="true" role="none">
-                                            <svg width="16" height="16" fill="currentColor" focusable="false"
-                                                viewBox="0 0 24 24">
-                                                <path
-                                                    d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-                                                </path>
-                                            </svg></span>
-                                    </span>
-                                    <div id="error-phone" class="login-error-message"> </div>
-                                </div>
-                                <button class="btn-form" type="submit">Criar conta grátis</button>
-                            </form>
+                                    
+                                    
+                                    <button class="btn-form" type="submit">Criar
+                                        conta grátis</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
-</body>
-
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
 </html>

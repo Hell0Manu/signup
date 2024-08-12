@@ -305,7 +305,7 @@ section{
 }
 
 .login-error-message {
-    display: none; /*ALTERAR*/
+    display: flex; /*ALTERAR*/
     margin-top: 4px;
     color: #a8200d;
 }
@@ -524,7 +524,7 @@ p {
 }
 
 .slide {
-    display: none;
+    display: flex; /*ALTERAR*/
 }
 
 .slide.active {
