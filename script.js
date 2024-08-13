@@ -9,8 +9,26 @@ let formStepNum = 0;
 function updateFormSteps() {
     formSteps.forEach((formStep, index) => {
         formStep.classList.toggle("active", index === formStepNum);
+        updateLogoVisibility();
     });
+
 }
+
+function updateLogoVisibility() {
+    const headerLogo = document.querySelector(".header-logo");
+    const isMobile = window.innerWidth <= 575; 
+
+    if (isMobile) {
+        if (formStepNum != 0) {
+            headerLogo.style.visibility = "hidden";
+        } else {
+            headerLogo.style.visibility = "visible";
+        }
+    } else {
+        headerLogo.style.visibility = "visible";
+    }
+}
+
 
 function updateProgressbar() {
     const stepWidth = 100 / (progressSteps.length - 1);
@@ -18,7 +36,11 @@ function updateProgressbar() {
     progress.style.width = progressPercentage;
 
     progressSteps.forEach((step, index) => {
-        step.classList.toggle("active", index <= formStepNum);
+        if (index === formStepNum) {
+            step.classList.add("active");
+        } else {
+            step.classList.remove("active");
+        }
     });
 }
 
@@ -55,27 +77,32 @@ function validateForm() {
         showError("error-phone", "O telefone informado não é válido");
         isValid = false;
     } 
+    
     return isValid;
 }
 
-
 function showError(fieldId, message) {
     const errorDiv = document.getElementById(fieldId);
-    const circle = document.querySelector(".error-circle");
+    const input = document.querySelector(`#${fieldId.replace('error-', '')}`);
+    const circle = input.parentElement.querySelector(".error-circle"); 
+
     if (errorDiv) {
         errorDiv.textContent = message;
         errorDiv.style.display = "block";
-        circle.style.display = "flex";
+        input.style.border = '3px solid #a8200f';
+        if (circle) {
+            circle.style.display = "flex";
+        }
     }
 }
 
 function hideError(fieldId) {
     const errorDiv = document.getElementById(fieldId);
-    const circle = document.querySelector(".error-circle");
+    const inputElement = document.querySelector(`#${fieldId.replace('error-', '')}`); // Seleciona o input relacionado
     if (errorDiv) {
+        inputElement.style.border = '2px solid #c9cbce';
         errorDiv.textContent = "";
         errorDiv.style.display = "none";
-        circle.style.display = "flex";
     }
 }
 
@@ -86,17 +113,6 @@ function clearErrors() {
     hideError("error-phone");
 }
 
-function validateEmailFormat(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-function validatePhoneFormat(phone) {
-    const regex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
-    return regex.test(phone);
-}
-
-// Event listeners for navigation buttons
 nextBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -117,3 +133,29 @@ prevBtns.forEach((btn) => {
         updateProgressbar();
     });
 });
+
+
+function validateEmailFormat(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+function validatePhoneFormat(phone) {
+    const regex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
+    return regex.test(phone);
+}
+
+function applyPhoneMask(element) {
+    let value = element.value;
+    if (value.length <= 10) {
+        value = value.replace(/\D/g, "");
+        value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+        value = value.replace(/(\d{4})(\d)/, "$1-$2");
+    } else {
+        value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+        value = value.replace(/(\d{5})(\d)/, "$1-$2");
+    }
+    element.value = value;
+}
+
+
