@@ -13,6 +13,21 @@
         <nav class="ct-navigation">
             <div class="ct-header">
                 <div class="header-logo"> imagem sults </div>
+                <div class="steps mobile">
+                    <div class="step clickable active" aria-current="false">
+                        <span type="button" class="step-label">Nome</span>
+                    </div>
+                    <div class="step" aria-current="step">
+                        <span class="step-label">Nome da empresa</span>
+                    </div>
+                    <div class="step" aria-current="false">
+                        <span class="step-label">E-mail
+                            corporativo</span>
+                    </div>
+                    <div class="step" aria-current="false">
+                        <span class="step-label">Telefone</span>
+                    </div>
+                </div>
                 <div class="header-close-btn">
                     <button type="button" class="close-btn" aria-label="Fechar">
                         <svg width="24" height="24" fill="currentColor" focusable="false" viewBox="0 0 24 24">
@@ -22,24 +37,24 @@
                         </svg>
                     </button>
                 </div>
-                <div class="stepper">
+                <div class="stepper ">
                     <div class="progress">
                         <div class="progress-bar" style="width: 0%;"></div>
                     </div>
                     <ol class="steps">
-                        <div class="step clickable active" aria-current="false" style="left: 0%;">
-                            <span type="button" class="step-label">Nome</span>
-                        </div>
-                        <div class="step" aria-current="step" style="left: 25%;">
+                        <li class="step clickable" aria-current="false" style="left: 0%;">
+                            <button type="button" class="step-label">Nome</button>
+                        </li>
+                        <li class="step" aria-current="step" style="left: 25%;">
                             <span class="step-label">Nome da empresa</span>
-                        </div>
-                        <div class="step" aria-current="false" style="left: 65%;">
+                        </li>
+                        <li class="step" aria-current="false" style="left: 65%;">
                             <span class="step-label">E-mail
                                 corporativo</span>
-                        </div>
-                        <div class="step" aria-current="false" style="left: 100%;">
+                        </li>
+                        <li class="step" aria-current="false" style="left: 100%;">
                             <span class="step-label">Telefone</span>
-                        </div>
+                        </li>
                     </ol>
                 </div>
 
@@ -50,24 +65,78 @@
 
         <!-- nome -->
         <section id="ct-nome" class="slide active">
-            <div class="teste">
-                <div class="teste2">
-                    <div class="ct-form">
-                        <div class="title">
-                            <h1>Crie sua conta SULTS grátis</h1>
-                            <p>Centralize e aumente a eficiência em toda
-                                operação</p>
+            <div class="section-wrapper">
+
+                <div class="ct-form">
+                    <div class="title">
+                        <h1>Crie sua conta SULTS grátis</h1>
+                        <p>Centralize e aumente a eficiência em toda
+                            operação</p>
+                    </div>
+                    <form id="form-nome">
+
+                        <label for="nome">Primeiro, insira seu
+                            nome</label>
+                        <input id="name" name="nome" autocomplete="nome" type="nome" class="form-input"
+                            title="insira o seu nome" aria-label="insira o seu nome">
+
+                        <div role="alert" class="login-error-message">
+
+                            <span class="error-circle icon-error" aria-hidden="true" role="none">
+                                <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                                    <path
+                                        d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <p id="error-name" class="login-error-message"></p>
                         </div>
-                        <form id="form-nome">
 
-                            <label for="nome">Primeiro, insira seu
-                                nome</label>
-                            <input id="name" name="nome" autocomplete="nome" type="nome" class="form-input"
-                                title="insira o seu nome" aria-label="insira o seu nome">
+                        <button class="btn-form" type="button">Continuar</button>
+                    </form>
 
-                            <div role="alert" class="login-error-message">
+                    <p class="termos">Ao se cadastrar, você aceita os nossos
+                        <a target="_blank" href="/terms-and-conditions">Termos de Uso</a> e
+                        a nossa
+                        <a target="_blank" href="/privacy-policy">Política
+                            de Privacidade</a>.
+                    </p>
+                </div>
 
-                                <span class="error-circle icon-error" aria-hidden="true" role="none">
+            </div>
+        </section>
+
+        <!-- company -->
+        <section id="ct-company" class="slide">
+            <div class="section-wrapper">
+
+                <button class="back-button" type="button" aria-live="off">
+                    <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                        </path>
+                    </svg>
+                    <span class="back-button-text">Voltar</span>
+                </button>
+
+
+
+                <div class="ct-form">
+                    <div class="title">
+                        <h1>Nome da empresa
+                        </h1>
+                        <p>Informe sua empresa</p>
+                    </div>
+
+                    <form id="form-company">
+                        <label for="company"></label>
+                        <input id="company" name="company" autocomplete="company" type="company" class="form-input"
+                            title="insira o seu nome da empresa" aria-label="insira o nome da empresa">
+
+                        <div role="alert" class="login-error-message">
+                            <span class="error-circle">
+                                <span class="icon-error" aria-hidden="true" role="none">
                                     <svg width="16" height="16" fill="currentColor" focusable="false"
                                         viewBox="0 0 24 24">
                                         <path
@@ -75,101 +144,85 @@
                                         </path>
                                     </svg>
                                 </span>
+                            </span>
 
-                                <p id="error-name" class="login-error-message"></p>
-                            </div>
-
-                            <button class="btn-form" type="button">Continuar</button>
-                        </form>
-
-                        <p class="termos">Ao se cadastrar, você aceita os nossos
-                            <a target="_blank" href="/terms-and-conditions">Termos de Uso</a> e
-                            a nossa
-                            <a target="_blank" href="/privacy-policy">Política
-                                de Privacidade</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- company -->
-        <section id="ct-company" class="slide">
-            <div class="teste">
-                <div class="teste2">
-                    <button class="back-button" type="button" aria-live="off">
-                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                            <path
-                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                            </path>
-                        </svg>
-                        <span class="back-button-text">Voltar</span>
-                    </button>
-
-
-
-                    <div class="ct-form">
-                        <div class="title">
-                            <h1>Nome da empresa
-                            </h1>
-                            <p>Informe sua empresa</p>
+                            <div id="error-company" class="login-error-message"></div>
                         </div>
 
-                        <form id="form-company">
-                            <label for="company"></label>
-                            <input id="company" name="company" autocomplete="company" type="company" class="form-input"
-                                title="insira o seu nome da empresa" aria-label="insira o nome da empresa">
-
-                            <div role="alert" class="login-error-message">
-                                <span class="error-circle">
-                                    <span class="icon-error" aria-hidden="true" role="none">
-                                        <svg width="16" height="16" fill="currentColor" focusable="false"
-                                            viewBox="0 0 24 24">
-                                            <path
-                                                d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-
-                                <div id="error-company" class="login-error-message"></div>
-                            </div>
-
-                            <button class="btn-form" type="button">Próximo</button>
-                        </form>
-                    </div>
-
+                        <button class="btn-form" type="button">Próximo</button>
+                    </form>
                 </div>
             </div>
         </section>
 
         <!-- email -->
         <section id="ct-email" class="slide">
-            <div class="teste">
-                <div class="teste2">
-                    <button class="back-button" type="button" aria-live="off">
-                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                            <path
-                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                            </path>
-                        </svg>
-                        <span class="back-button-text">Voltar</span>
-                    </button>
-                    <div class="ct-form">
+            <div class="section-wrapper">
+                <button class="back-button" type="button" aria-live="off">
+                    <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                        </path>
+                    </svg>
+                    <span class="back-button-text">Voltar</span>
+                </button>
+                <div class="ct-form">
+                    <div class="title">
+                        <h1>Email</h1>
+                        <p>Insira o seu endereço de e-mail</p>
+                    </div>
+                    <form id="form-email">
+                        <label for="email">Insira o seu endereço de e-mail
+                        </label>
+                        <input id="email" name="email" autocomplete="email" type="email" class="form-input"
+                            title="insira o seu endereço de e-mail" aria-label="insira o seu endereço de e-mail" value>
 
+                        <div role="alert" class="login-error-message">
+                            <span class="error-circle">
+                                <span class="icon-error" aria-hidden="true" role="none">
+                                    <svg width="16" height="16" fill="currentColor" focusable="false"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </span>
 
-                        <div class="title">
-                            <h1>Email</h1>
-                            <p>Insira o seu endereço de e-mail</p>
+                            <div id="error-email" class="login-error-message"></div>
                         </div>
 
-                        <form id="form-email">
-                            <label for="email">Insira o seu endereço de e-mail
-                            </label>
-                            <input id="email" name="email" autocomplete="email" type="email" class="form-input"
-                                title="insira o seu endereço de e-mail" aria-label="insira o seu endereço de e-mail"
-                                value>
+                        <button class="btn-form" type="button">Próximo</button>
+                    </form>
+                </div>
+                <div id="errorModal" style="display: none;">
+                    <button id="closeModalError">Fechar</button>
+                </div>
+            </div>
+        </section>
 
+        <!-- phone -->
+        <section id="ct-phone" class="slide">
+            <div class="section-wrapper">
+                <button class="back-button" type="button" aria-live="off">
+                    <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                        </path>
+                    </svg>
+                    <span class="back-button-text">Voltar</span>
+                </button>
+                <div class="content">
+                    <div class="title">
+                        <h1>Informe seu telefone ou celular</h1>
+                        <p>Isso nos ajudará a entrar em contato</p>
+                    </div>
+                    <div class="ct-form">
+                        <form id="form-phone">
+                            <label for="phone" class="states-number">Número de telefone</label>
+                            <input id="phone" name="phone" autocomplete="phone" type="text" class="form-input"
+                                title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
+                                oninput="applyPhoneMask(this)" maxlength="15" value>
                             <div role="alert" class="login-error-message">
                                 <span class="error-circle">
                                     <span class="icon-error" aria-hidden="true" role="none">
@@ -181,63 +234,10 @@
                                         </svg>
                                     </span>
                                 </span>
-
-                                <div id="error-email" class="login-error-message"></div>
+                                <div role="alert" class="login-error-message" id="error-phone"> </div>
                             </div>
-
-                            <button class="btn-form" type="button">Próximo</button>
+                            <button class="btn-form" type="submit">Criar conta grátis</button>
                         </form>
-                    </div>
-                    <div id="errorModal" style="display: none;">
-                        <button id="closeModalError">Fechar</button>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- phone -->
-        <section id="ct-phone" class="slide">
-            <div class="teste">
-                <div class="teste2">
-                    <button class="back-button" type="button" aria-live="off">
-                        <svg width="16" height="16" fill="currentColor" focusable="false" viewBox="0 0 24 24">
-                            <path
-                                d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
-                            </path>
-                        </svg>
-                        <span class="back-button-text">Voltar</span>
-                    </button>
-                    <div class="content">
-                        <div class="title">
-                            <h1>Informe seu telefone ou celular</h1>
-                            <p>Isso nos ajudará a entrar em contato</p>
-                        </div>
-
-                        <div class="ct-form">
-                            <form id="form-phone">
-                                <label for="phone" class="states-number">Número de telefone</label>
-
-                                <input id="phone" name="phone" autocomplete="phone" type="text" class="form-input"
-                                    title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
-                                    oninput="applyPhoneMask(this)" maxlength="15" value>
-                                <div role="alert" class="login-error-message">
-                                    <span class="error-circle">
-                                        <span class="icon-error" aria-hidden="true" role="none">
-                                            <svg width="16" height="16" fill="currentColor" focusable="false"
-                                                viewBox="0 0 24 24">
-                                                <path
-                                                    d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                    <div role="alert" class="login-error-message" id="error-phone"> </div>
-                                </div>
-                                <button class="btn-form" type="submit">Criar conta grátis</button>
-                            </form>
-                        </div>
-
                     </div>
                 </div>
             </div>

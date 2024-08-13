@@ -2,7 +2,8 @@ const prevBtns = document.querySelectorAll(".back-button");
 const nextBtns = document.querySelectorAll(".btn-form");
 const progress = document.querySelector(".progress-bar");
 const formSteps = document.querySelectorAll(".slide");
-const progressSteps = document.querySelectorAll(".steps .step");
+const progressSteps = document.querySelectorAll(".steps.mobile .step");
+const steps = document.querySelectorAll(".stepper .steps .step");
 
 let formStepNum = 0;
 
@@ -16,7 +17,8 @@ function updateFormSteps() {
 
 function updateLogoVisibility() {
     const headerLogo = document.querySelector(".header-logo");
-    const isMobile = window.innerWidth <= 575; 
+    const stepper = document.querySelector(".stepper");
+    const isMobile = window.innerWidth <= 575;
 
     if (isMobile) {
         if (formStepNum != 0) {
@@ -25,6 +27,10 @@ function updateLogoVisibility() {
             headerLogo.style.visibility = "visible";
         }
     } else {
+        if (formStepNum > 0) {
+            stepper.style.display = "block";
+        }
+
         headerLogo.style.visibility = "visible";
     }
 }
@@ -35,13 +41,24 @@ function updateProgressbar() {
     const progressPercentage = stepWidth * formStepNum + "%";
     progress.style.width = progressPercentage;
 
-    progressSteps.forEach((step, index) => {
-        if (index === formStepNum) {
-            step.classList.add("active");
-        } else {
-            step.classList.remove("active");
-        }
-    });
+    const isMobile = window.innerWidth <= 575;
+    if (isMobile) {
+        progressSteps.forEach((step, index) => {
+            if (index === formStepNum) {
+                step.classList.add("active");
+            } else {
+                step.classList.remove("active");
+            }
+        });
+    } else {
+        steps.forEach((step, index) => {
+            if (index === formStepNum) {
+                step.classList.add("active");
+            } else {
+                step.classList.remove("active");
+            }
+        });
+    }
 }
 
 function validateForm() {
@@ -56,7 +73,7 @@ function validateForm() {
     if (formStepNum === 0 && name === "") {
         showError("error-name", "Nome: Preenchimento obrigatório");
         isValid = false;
-    } 
+    }
     if (formStepNum === 1 && company === "") {
         showError("error-company", "Empresa: Preenchimento obrigatório");
         isValid = false;
@@ -68,7 +85,7 @@ function validateForm() {
     } else if (formStepNum === 2 && !validateEmailFormat(email)) {
         showError("error-email", "O e-mail informado não é válido");
         isValid = false;
-    } 
+    }
 
     if (formStepNum === 3 && phone === "") {
         showError("error-phone", "Telefone: Preenchimento obrigatório");
@@ -76,15 +93,15 @@ function validateForm() {
     } else if (formStepNum === 3 && !validatePhoneFormat(phone)) {
         showError("error-phone", "O telefone informado não é válido");
         isValid = false;
-    } 
-    
+    }
+
     return isValid;
 }
 
 function showError(fieldId, message) {
     const errorDiv = document.getElementById(fieldId);
     const input = document.querySelector(`#${fieldId.replace('error-', '')}`);
-    const circle = input.parentElement.querySelector(".error-circle"); 
+    const circle = input.parentElement.querySelector(".error-circle");
 
     if (errorDiv) {
         errorDiv.textContent = message;
@@ -98,8 +115,8 @@ function showError(fieldId, message) {
 
 function hideError(fieldId) {
     const errorDiv = document.getElementById(fieldId);
-    const inputElement = document.querySelector(`#${fieldId.replace('error-', '')}`); // Seleciona o input relacionado
-   const circle = inputElement.parentElement.querySelector(".error-circle"); 
+    const inputElement = document.querySelector(`#${fieldId.replace('error-', '')}`);
+    const circle = inputElement.parentElement.querySelector(".error-circle");
     if (errorDiv) {
         inputElement.style.border = '2px solid #c9cbce';
         errorDiv.textContent = "";
@@ -108,7 +125,7 @@ function hideError(fieldId) {
             circle.style.display = "none";
         }
     }
-  
+
 }
 
 function clearErrors() {
@@ -162,5 +179,3 @@ function applyPhoneMask(element) {
     }
     element.value = value;
 }
-
-

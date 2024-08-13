@@ -2,7 +2,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* background-color: #f4f4f4; */
     font-family: Arial, sans-serif;
 }
 
@@ -43,9 +42,6 @@ a {
     justify-content: space-between;
 }
 
-.header-close-btn {
-    order: 2;
-}
 
 
 /* BOTÃO MENU */
@@ -68,11 +64,13 @@ a {
 
 /* BARRA DE PROGRESSO */
 .stepper {
-    width: 100%;
-    max-width: 600px;
+    width: 60%;
     position: relative;
     padding: 0 24px;
-    order: 1;
+}
+
+.header-close-btn {
+    order: 2;
 }
 
 .progress {
@@ -115,7 +113,7 @@ a {
 .step {
     font-size: 14px;
     color: #7d7d7d;
-    position: absolute;
+  
 }
 
 .step-label {
@@ -132,7 +130,6 @@ a {
     font-weight: bold;
 }
 
-
 /* FORMULARIO INICIAL */
 .gp-main {
     margin-top: 70px;
@@ -144,45 +141,19 @@ a {
     justify-content: center;
 }
 
-/* .gp-form {
-    width: 526px;
-    padding: 2rem;
-    border-radius: 8px;
-} */
-
-/* section{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-} */
-
-.teste{
+.section-wrapper{
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
     max-width: 1100px;
-    /* background:red; */
-}
-
-.teste2 {
-    width: 100%;
-    max-width: 1100px;
     position: relative;
-    /* background-color: #00ff22; */
 }
 
 .ct-form {
     width: 100%;
     max-width: 565px;
     margin-left: 25%;
-    /* background: fuchsia; */
 }
-
-/* .teste2:has(div) {
-    width: 100%;
-    max-width: 565px;
-} */
 
 .subtitle-social { 
     text-align: start !important;
@@ -206,7 +177,6 @@ a {
     margin-top: 0.5rem;
     box-sizing: border-box;
     border: 2px solid #c9cbce;
-    /* background-color: #f4f4f4; */
 }
 
 .form-input:hover{
@@ -236,7 +206,6 @@ a {
     background: linear-gradient(#00a1a1 0, #00a1a1 100%);
 }
 
-
 /*VALIDAÇÃO EMAIL*/
 .error-circle {
     width: 16px;
@@ -251,12 +220,6 @@ a {
     color: white;
     justify-content: center;
 }
-
-/* .icon-error, .error-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .login-error-message {
     display: flex; /*ALTERAR*/
@@ -380,16 +343,19 @@ p {
     .ct-form {
         margin-left: 16%;
     }
+    .stepper {
+        width: 100%;
+    }
+}
+.steps.mobile .step {
+    display: none;
 }
 
 @media (max-width:575px) {
-    .step-content{
+    .step-content, .steps .step{
         display: none;
     }
 
-    .step-content-mobile {
-        display: block;
-    }
     .termos {
        width: 100%;
     }
@@ -400,31 +366,23 @@ p {
         position: absolute;
         width: 0;
     }
-    .teste2{
+    .section-wrapper{
         position: static;
     }
-}
-
-@media (max-width: 575px) {
-    .step {
-        display: none; 
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        left: 0%;
-    }
-
-    .step.active {
+    .step.active{
         display: flex;
         opacity: 1;
     }
-
-    .steps {
-        justify-content: center;
+    .steps.mobile  {
+        display: none;
     }
-
-    .progress {
-        display: none; 
+    .steps.mobile .step.active {
+        display: flex;
     }
+}
+
+.steps.mobile  {
+    display: flex;
 }
 
 .options {
@@ -478,7 +436,6 @@ p {
 }
 
 /*Input Phone*/
-
 .inputPhone {
     display: flex;
 }
@@ -495,7 +452,7 @@ p {
 }
 
 .slide {
-    display: flex; /*ALTERAR*/
+    display: none; /*ALTERAR*/
 }
 
 .slide.active {
