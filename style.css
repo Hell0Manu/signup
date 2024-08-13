@@ -263,7 +263,7 @@ a {
     margin-top: 4px;
     color: #a8200d;
 }
-.login-error-message .error-circle {
+.error-circle {
     display: none; 
 }
 .login-error-message p {
@@ -495,7 +495,7 @@ p {
 }
 
 .slide {
-    display: none; /*ALTERAR*/
+    display: flex; /*ALTERAR*/
 }
 
 .slide.active {

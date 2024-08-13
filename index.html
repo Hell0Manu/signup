@@ -36,7 +36,7 @@
                         <div class="step" aria-current="false" style="left: 65%;">
                             <span class="step-label">E-mail
                                 corporativo</span>
-                            </div>
+                        </div>
                         <div class="step" aria-current="false" style="left: 100%;">
                             <span class="step-label">Telefone</span>
                         </div>
@@ -81,14 +81,14 @@
 
                             <button class="btn-form" type="button">Continuar</button>
                         </form>
-                  
-                    <p class="termos">Ao se cadastrar, você aceita os nossos
-                        <a target="_blank" href="/terms-and-conditions">Termos de Uso</a> e
-                        a nossa
-                        <a target="_blank" href="/privacy-policy">Política
-                            de Privacidade</a>.
-                    </p>
-                </div>
+
+                        <p class="termos">Ao se cadastrar, você aceita os nossos
+                            <a target="_blank" href="/terms-and-conditions">Termos de Uso</a> e
+                            a nossa
+                            <a target="_blank" href="/privacy-policy">Política
+                                de Privacidade</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -216,13 +216,11 @@
 
                         <div class="ct-form">
                             <form id="form-phone">
-                                <label for="phone-number" class="states-number">Número de telefone</label>
-                                <div class="inputPhone">
-                                    <input id="phone" name="phone" autocomplete="phone" type="phone" class="form-input"
-                                        title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
-                                        oninput="applyPhoneMask(this)" maxlength="15" value>
-                                </div>
+                                <label for="phone" class="states-number">Número de telefone</label>
 
+                                <input id="phone" name="phone" autocomplete="phone" type="text" class="form-input"
+                                    title="Insira seu numero de telefone" aria-label="Insira seu numero de telefone"
+                                    oninput="applyPhoneMask(this)" maxlength="15" value>
                                 <div role="alert" class="login-error-message">
                                     <span class="error-circle">
                                         <span class="icon-error" aria-hidden="true" role="none">
@@ -231,15 +229,15 @@
                                                 <path
                                                     d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
                                                 </path>
-                                            </svg></span>
+                                            </svg>
+                                        </span>
                                     </span>
-                                    <div id="error-phone" class="login-error-message"> </div>
+                                    <div role="alert" class="login-error-message" id="error-phone"> </div>
                                 </div>
-
-                                <button class="btn-form" type="submit">Criar
-                                    conta grátis</button>
+                                <button class="btn-form" type="submit">Criar conta grátis</button>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

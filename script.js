@@ -99,11 +99,16 @@ function showError(fieldId, message) {
 function hideError(fieldId) {
     const errorDiv = document.getElementById(fieldId);
     const inputElement = document.querySelector(`#${fieldId.replace('error-', '')}`); // Seleciona o input relacionado
+   const circle = inputElement.parentElement.querySelector(".error-circle"); 
     if (errorDiv) {
         inputElement.style.border = '2px solid #c9cbce';
         errorDiv.textContent = "";
         errorDiv.style.display = "none";
+        if (circle) {
+            circle.style.display = "none";
+        }
     }
+  
 }
 
 function clearErrors() {
