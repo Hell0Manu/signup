@@ -2,16 +2,14 @@
 <html lang="pt-br">
 
 <head>
-<link rel="preload"
-	href="https://www.sults.com.br/sults/images/ilustracoes/primaria/criar-conta-fundo-sults.webp"
-	as="image">
-<jsp:include page="/sults/components/default/include_meta.jsp">
-	<jsp:param name="meta_title"
-		value="SULTS: Solicite agora uma avaliação gratuita" />
-	<jsp:param name="meta_description"
-		value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
-</jsp:include>
-<style>
+    <link rel="preload" href="https://www.sults.com.br/sults/images/ilustracoes/primaria/criar-conta-fundo-sults.webp"
+        as="image">
+    <jsp:include page="/sults/components/default/include_meta.jsp">
+        <jsp:param name="meta_title" value="SULTS: Solicite agora uma avaliação gratuita" />
+        <jsp:param name="meta_description"
+            value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
+    </jsp:include>
+    <style>
 /* ESTILOS GERAIS */
 body {
 	margin: 0;
@@ -61,7 +59,6 @@ a {
 	align-items: center;
 	justify-content: center;
 	border-bottom: 1px solid #ccc;
-	margin-bottom: 24px;
 }
 
 .ct-header {
@@ -164,6 +161,7 @@ a {
 .gp-main {
 	padding: 20px;
 	display: flex;
+	margin-top: 70px;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
@@ -836,7 +834,7 @@ p {
 							<p>Isso nos ajudará a entrar em contato</p>
 						</div>
 
-						
+						<div class="ct-form">
 							<form id="form-phone">
 								<label for="phone" class="states-number">Número de
 									telefone</label> <input id="phone" name="phone" autocomplete="phone"
@@ -870,7 +868,7 @@ p {
 											</svg>
 								</button>
 							</form>
-						
+						</div>
 					</div>
 				</div>
 			</section>

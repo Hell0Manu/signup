@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tw-flow__main {
+           
+        }
+
+        .step-header {
+    /* max-width: 1000px; */
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
+    background-color: red;
+}
+
+.back-button {
+    left: 64px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+        .back-button__text {
+            margin-left: 8px;
+        }
+
+        .step-content {
+    background-color: aqua;
+    text-align: center;
+    width: 500px;
+    /* display: flex; */
+}
+
+        .select-country {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .country-button {
+            display: flex;
+            align-items: center;
+            padding-right: 44px;
+        }
+
+        .dropdown-icon {
+            margin-left: 8px;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                margin-bottom: 16px;
+            }
+        }
+
+        .teste {
+    background: yellow;
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
+    </style>
+</head>
+
+<body>
+    <section class="tw-flow__main">
+       
+          
+                <div class="step-header">
+
+                    <button class="back-button" type="button">
+                        <span class="d-flex">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+                                </path>
+                            </svg>
+                            <span class="back-button__text">Voltar</span>
+                        </span>
+                    </button>
+
+                    <div class="teste">
+                        <div class="step-content">
+
+
+
+
+
+                            <h1 class="step-title">Where is your business located?</h1>
+                            <p>Select the country or region where your business is registered. If it's unregistered,
+                                select where your business pays tax.</p>
+                            <form action="#" method="post">
+
+                                <fieldset class="select-country">
+                                    <button class="country-button" type="button">
+                                        <span class="country-info">
+                                            <img src="https://wise.com/web-art/assets/flags/br.svg" alt="Brazil"
+                                                width="24" height="24">
+                                            <span>Brazil</span>
+                                        </span>
+                                    </button>
+
+                                    <span class="dropdown-icon">
+                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M20.143 6.857L12.17 14.83 4.2 6.857 3 8.057l8.571 8.572a.846.846 0 0 0 .6.257.846.846 0 0 0 .6-.257l8.572-8.572-1.2-1.2Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </fieldset>
+                                <button class="submit-button" type="submit">Continuar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            
+       
+    </section>
+
+</body>
+
+</html>

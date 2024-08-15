@@ -70,9 +70,15 @@ function validateForm() {
     const email = document.querySelector("#email").value;
     const phone = document.querySelector("#phone").value;
 
+    console.log("Nome:", name);
+    console.log("Empresa:", company);
+    console.log("E-mail:", email);
+    console.log("Telefone:", phone);
+
     if (formStepNum === 0 && name === "") {
         showError("error-name", "Nome: Preenchimento obrigatório");
         isValid = false;
+    
     }
     if (formStepNum === 1 && company === "") {
         showError("error-company", "Empresa: Preenchimento obrigatório");
@@ -94,7 +100,7 @@ function validateForm() {
         showError("error-phone", "O telefone informado não é válido");
         isValid = false;
     }
-
+    
     return isValid;
 }
 
@@ -179,3 +185,5 @@ function applyPhoneMask(element) {
     }
     element.value = value;
 }
+
+
