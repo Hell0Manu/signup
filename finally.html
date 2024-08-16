@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+
+		.slide.active {
+			display: block;
+		}
+
+        .slide {
+			display: none; /*ALTERAR*/
+        }
+
+        .section-wrapper {
+			max-width: 800px;
+   			margin: 0 auto;
+        }
+       
+		.ct-form {
+		padding: 0 10%;
+		margin: 0 5%;
+		
+		}
+
+		.back-button {
+			display: block;
+			border: none;
+			font-size: 16px;
+			font-weight: 600;
+			background: none;
+			margin-left: 10px;
+			position: absolute;
+			text-decoration: underline;
+			text-underline-offset: .3em;
+        }
+
+		.back-button.mobile {
+			display: none;
+			position: relative;
+			border: none;	
+			background: none;
+			border-radius: 50px;
+        }
+
+        input {
+            width: 100%;
+            font-size: 16px;
+            margin-top: 0.5rem;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            box-sizing: border-box;
+            border: 2px solid #c9cbce;
+        }
+
+        .btn-form {
+            width: 100%;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 24px;
+            border-radius: 4px;
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(#00acac 0, #00acac 100%);
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+				
+		button, a, input, select {
+			cursor: pointer;
+		}
+
+		.form-title, .step-content p, .title, .progressbar li {
+			text-align: center;
+		}
+
+		a {
+			font-weight: 600;
+			color: #0f5da6;
+		}
+
+		/* ESTILOS GERAIS */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		button, a, input, select {
+			cursor: pointer;
+		}
+
+		.form-title, .step-content p, .title, .progressbar li {
+			text-align: center;
+		}
+
+		a {
+			font-weight: 600;
+			color: #0f5da6;
+		}
+
+		/* MENU */
+		.ct-navigation {
+			display: flex;
+			padding: 1.5rem 0;
+			overflow-x: hidden;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 25px;
+		}
+
+		.ct-header {
+			width: 100%;
+			display: flex;
+			min-height: 56px;
+			padding: 0 1.5rem;
+			max-width: 1200px;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		/* BOTÃO MENU */
+		.close-btn {
+			width: 48px;
+			height: 48px;
+			border: none;
+			display: flex;
+			background: none;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.close-btn:hover {
+			height: 48px;
+			width: 48px;
+			border-radius: 50px;
+			background-color: #00acac12;
+		}
+
+		/* BARRA DE PROGRESSO */
+		.stepper {
+			width: 60%;
+			display: none;
+			padding: 0 24px;
+			margin-top: 20px;
+			position: relative;
+		}
+
+		.header-close-btn {
+			order: 2;
+		}
+
+		.progress {
+			width: 100%;
+			height: 2px;
+			position: relative;
+			margin-bottom: 10px;
+			background-color: #e0e0e0;
+		}
+
+		.progress-bar {
+			top: 0;
+			left: 0;
+			height: 100%;
+			position: absolute;
+			background-color: #00acac;
+			transition: width 0.3s ease;
+		}
+
+		.progress-bar:after {
+			width: 8px;
+			height: 8px;
+			content: "";
+			float: right;
+			margin-top: -3px;
+			margin-right: -4px;
+			border-radius: 4px;
+			background-color: #00acac;
+		}
+
+		.steps {
+			padding: 0;
+			margin: 0;
+			display: flex;
+			list-style: none;
+			position: relative;
+			justify-content: space-between;
+		}
+
+		.step {
+			font-size: 14px;
+			color: #7d7d7d;
+		}
+
+		.step-label {
+			padding: 0;
+			border: none;
+			cursor: pointer;
+			background: none;
+			display: inline-block;
+		}
+
+		.step.active .step-label, .step.active {
+			color: #00acac;
+			font-weight: bold;
+		}
+
+		/* FORMULARIO INICIAL */
+		.title h1 {
+			color: #000000;
+			font-size: 24px;
+			margin: 0 0 1rem;
+		}
+
+		.title p {
+			font-size: .875rem;
+			margin: 0.5rem 0 2.5rem;
+		}
+
+		.form-input {
+			width: 100%;
+			font-size: 16px;
+			margin-top: 0.5rem;
+			border-radius: 10px;
+			padding: 0.75rem 1rem;
+			box-sizing: border-box;
+			border: 2px solid #c9cbce;
+		}
+
+		.form-input:hover {
+			border: 2px solid #00acac;
+		}
+
+		.form-input:focus {
+			outline: none;
+			border: 3px solid #00acac;
+			box-shadow: rgba(67, 71, 85, 0.27) 0 0 0.25em, rgba(90, 125, 188, 0.05)
+				0 0.25em 1em;
+		}
+
+		/*BOTÃO DE ENVIO FORMULARIO INICIAL*/
+		.btn-form {
+			width: 100%;
+			border: none;
+			color: #fff;
+			font-size: 16px;
+			margin-top: 24px;
+			border-radius: 4px;
+			border-radius: 20px;
+			padding: 0.75rem 1.5rem;
+			background: linear-gradient(#00acac 0, #00acac 100%);
+		}
+
+		.btn-form:hover {
+			background: linear-gradient(#00a1a1 0, #00a1a1 100%);
+		}
+
+		/*VALIDAÇÃO EMAIL*/
+		.error-circle {
+			width: 16px;
+			height: 16px;
+			margin-right: 4px;
+			border-radius: 50%;
+			background-color: #a8200d;
+		}
+
+		.icon-error svg {
+			color: white;
+			justify-content: center;
+			position: absolute;
+		}
+
+		.login-error-message {
+			display: flex;
+			/*ALTERAR*/
+			margin-top: 4px;
+			color: #a8200d;
+			align-items: center;
+		}
+
+		.login-error-message p {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		/*back button*/
+		.back-button-text {
+			width: 95px;
+		}
+
+		.back-button:focus {
+			border-radius: 20px;
+			background-color: #00acac12;
+		}
+
+		.back-button.mobile:focus {
+			border-radius: 50px;
+		}
+
+		.termos {
+			padding: 0;
+			width: 100%;
+			border-top: none;
+			text-align: center;
+			margin: 20px auto 0;
+		}
+
+		p {
+			line-height: 155%;
+			color: rgb(69, 71, 69);
+		}
+
+		/* ACCOUNT SELECTION */
+		.step-content {
+			margin: 0 auto 0 auto;
+			padding: 0 32px 0 32px;
+		}
+
+		.step-content-mobile, .steps.mobile, .error-circle {
+			display: none;
+		}
+
+		/*RESPONSIVIDADE SEGUNDA PAGINA*/
+		@media ( max-width :990px) {
+			.back-button-text {
+				display: none;
+			}
+			.header-close-btn {
+				order: 1;
+			}
+			.stepper {
+				order: 2;
+			}
+			.ct-header {
+				flex-wrap: wrap;
+			}
+			.stepper {
+				width: 100%;
+			}
+		}
+
+		@media ( min-width : 575px) {
+			#logo-img{
+				display: none;
+			}
+			#logo-img-completa {
+				display: block;
+			}
+			.back-button.mobile {
+				display: block;
+			}
+		}
+
+		@media ( max-width :575px) {
+			.step-content, .steps .step, #logo-img-completa, .back-button {
+				display: none;
+			}
+			.steps.mobile, .steps.mobile .step.active {
+				display: flex;
+			}
+			#logo-img {
+				display: block;
+			}
+		}
+
+		.icon {
+			display: flex;
+			align-items: center;
+			padding-right: 16px;
+		}
+
+		.icon span {
+			width: 48px;
+			height: 48px;
+			display: flex;
+			line-height: 48px;
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+			background-color: #16330014;
+		}
+
+		.icon-text {
+			display: flex;
+			text-align: start;
+		}
+
+		.arrow {
+			display: flex;
+			padding-left: 16px;
+			align-items: center;
+			justify-content: center;
+			transform: rotate(90deg);
+		}
+
+		/*Input Phone*/
+
+		.button-input {
+			text-align: start;
+			border-radius: 10px;
+			align-content: center;
+		}
+
+		.conta-success-container {
+			display: none;
+			padding: 3.25rem;
+			max-width: 700px;
+			border-radius: 12px;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			background-color: #ffffff;
+		}
+
+		.modal-contact {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+			z-index: 9999;
+			position: fixed;
+			overflow: hidden;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+
+		.modal-content {
+			gap: 1rem;
+			margin: auto;
+			padding: 20px;
+			display: flex;
+			max-width: 390px;
+			align-items: center;
+			border-radius: 1rem;
+			flex-direction: column;
+			border: 1px solid #888;
+			background-color: #fefefe;
+			transform: translate(0, 50%);
+		}
+
+		.contact-button {
+			gap: 8px;
+			border: none;
+			color: white;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 700;
+			margin-top: auto;
+			border-radius: 8px;
+			padding: 10px 24px;
+			background: #1B7EDA;
+		}
+
+		.contact-button:hover {
+			color: white;
+			background: #165694;
+			transition: background ease-in 100ms;
+		}
+
+		.spinner {
+			display: none;
+			margin-left: 12px;
+			-webkit-animation: rotator 1.4s linear infinite;
+			animation: rotator 1.4s linear infinite;
+		}
+
+		.register-button {
+			gap: 6px;
+			opacity: 1;
+			width: 100%;
+			border: none;
+			color: white;
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 700;
+			margin-top: 14px;
+			padding: 14px 24px;
+			border-radius: 6px;
+			margin-bottom: 42px;
+			background: linear-gradient(#1b7eda 0, #1b7EDA 100%);
+		}
+
+		.register-button:hover, .register-button:focus {
+			background: linear-gradient(#0285ff 0, #1980e0 100%);
+		}
+
+		.register-button:focus {
+			box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+		}
+
+		.ct-form label{
+			color: #5d7079;
+			font-size: .875rem;
+		}
+
+  @-webkit-keyframes rotator {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+            }
+        }
+
+        @keyframes rotator {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+            }
+        }
+
+        .path {
+            stroke-dasharray: 187;
+            stroke-dashoffset: 0;
+            stroke: #fff;
+            background-image: linear-gradient(-20deg, #0f5da6 0, #0f5da6 100%);
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: dash 1.4s ease-in-out infinite;
+            animation: dash 1.4s ease-in-out infinite;
+        }
+
+        @-webkit-keyframes dash {
+            0% {
+                stroke-dashoffset: 187;
+            }
+            50% {
+                stroke-dashoffset: 46.75;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+
+            100% {
+                stroke-dashoffset: 187;
+                -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+            }
+        }
+
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: 187;
+            }
+            50% {
+                stroke-dashoffset: 46.75;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+            100% {
+                stroke-dashoffset: 187;
+                -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+            }
+        }
+
+    </style>
+	</head>
+
+	<body>
+		<header>
+			<nav class="ct-navigation">
+				<div class="ct-header">
+					<button class="back-button mobile close-btn" type="button" aria-live="off">
+						<svg width="16" height="16" fill="currentColor" focusable="false"
+							viewBox="0 0 24 24">
+							<path
+								d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+							</path>
+						</svg>
+					</button>
+					<div class="header-logo">
+						<a href="https://www.sults.com.br/"> <img
+								id="logo-img-completa"
+								src="/sults/images/logo/sults/completa/sults-logo-oficial.svg"
+								width="95" height="24" alt="Logo SULTS"> <img id="logo-img"
+								src="/sults/images/logo/sults/simbolo/logo-sults-s-verdigris.svg"
+								width="40" height="40" alt="Logo SULTS">
+						</a>
+					</div>
+					<div class="steps mobile">
+						<div class="step clickable active" aria-current="false">
+							<span type="button" class="step-label">Nome</span>
+						</div>
+						<div class="step" aria-current="step">
+							<span class="step-label">Nome da empresa</span>
+						</div>
+						<div class="step" aria-current="false">
+							<span class="step-label">E-mail corporativo</span>
+						</div>
+
+						<div class="step" aria-current="false">
+							<span class="step-label">Telefone</span>
+						</div>
+					</div>
+					<div class="header-close-btn">
+						<a href="https://www.sults.com.br/">
+							<button type="button" class="close-btn" aria-label="Fechar">
+								<svg width="24" height="24" fill="currentColor" focusable="false"
+									viewBox="0 0 24 24">
+									<path
+										d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+									</path>
+								</svg>
+							</button>
+						</a>
+					</div>
+
+					<div class="stepper ">
+						<div class="progress">
+							<div class="progress-bar" style="width: 0%;"></div>
+						</div>
+
+						<ol class="steps">
+							<li class="step clickable" aria-current="false" style="left: 0%;">
+								<button type="button" class="step-label">Nome</button>
+							</li>
+
+							<li class="step" aria-current="step" style="left: 25%;"><span
+									class="step-label">Nome da empresa</span></li>
+							<li class="step" aria-current="false" style="left: 65%;"><span
+									class="step-label">E-mail corporativo</span></li>
+
+							<li class="step" aria-current="false" style="left: 100%;"><span
+									class="step-label">Telefone</span></li>
+						</ol>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="conta-register-container">
+				<main>
+					<div class="conta-register-container">
+						<section id="ct-nome" class="slide active">
+							<div class="section-wrapper">
+								<div class="ct-form">
+									<div class="title">
+										<h1>Crie sua conta SULTS grátis</h1>
+										<p>Centralize e aumente a eficiência em toda operação</p>
+									</div>
+
+									<form id="form-nome">
+										<label for="nome">Primeiro, insira seu nome</label> <input
+											id="name" name="nome" autocomplete="nome" type="nome"
+											class="form-input" title="insira o seu nome"
+											aria-label="insira o seu nome">
+
+										<div role="alert" class="login-error-message">
+											<span class="error-circle icon-error" aria-hidden="true"
+												role="none"> <svg width="16" height="16"
+													fill="currentColor" focusable="false" viewBox="0 0 24 24">
+													<path
+														d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+													</path>
+												</svg>
+											</span>
+											<p id="error-name" class="login-error-message"></p>
+
+										</div>
+										<button class="btn-form" type="button">Continuar</button>
+									</form>
+
+									<p class="termos">
+										Ao se cadastrar, você aceita os nossos <a target="_blank"
+											href="https://policies.sults.com.br/termos-de-uso">Termos de
+											Uso</a> e a nossa <a target="_blank"
+											href="https://policies.sults.com.br/politica-de-privacidade">Política
+											de Privacidade</a>.
+									</p>
+								</div>
+							</div>
+						</section>
+
+						<!-- company -->
+						<section id="ct-company" class="slide">
+							<div class="section-wrapper">
+								<button class="back-button" type="button" aria-live="off">
+									<svg width="16" height="16" fill="currentColor" focusable="false"
+										viewBox="0 0 24 24">
+										<path
+											d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+										</path>
+									</svg>
+									<span class="back-button-text">Voltar</span>
+								</button>
+
+								<div class="ct-form">
+									<div class="title">
+										<h1>Nome da empresa</h1>
+										<p>Informe sua empresa</p>
+									</div>
+
+									<form id="form-company">
+										<label for="company">Insira o nome da empresa</label> <input
+											id="company" name="company"
+											autocomplete="company" type="company" class="form-input"
+											title="insira o seu nome da empresa"
+											aria-label="insira o nome da empresa">
+
+										<div role="alert" class="login-error-message">
+											<span class="error-circle"> <span class="icon-error"
+													aria-hidden="true" role="none"> <svg width="16"
+														height="16" fill="currentColor" focusable="false"
+														viewBox="0 0 24 24">
+														<path
+															d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+														</path>
+													</svg>
+												</span>
+											</span>
+
+											<p id="error-company" class="login-error-message"></p>
+										</div>
+										<button class="btn-form" type="button">Próximo</button>
+									</form>
+								</div>
+							</div>
+						</section>
+
+						<!-- email -->
+						<section id="ct-email" class="slide">
+							<div class="section-wrapper">
+								<button class="back-button" type="button" aria-live="off">
+									<svg width="16" height="16" fill="currentColor" focusable="false"
+										viewBox="0 0 24 24">
+										<path
+											d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+										</path>
+									</svg>
+									<span class="back-button-text">Voltar</span>
+								</button>
+								<div class="ct-form">
+									<div class="title">
+										<h1>Email</h1>
+										<p>Insira o seu endereço de e-mail</p>
+									</div>
+
+									<form id="form-email">
+										<label for="email">Insira o seu endereço de e-mail</label>
+										<input
+											id="email" name="email" autocomplete="email" type="email"
+											class="form-input" title="insira o seu endereço de e-mail"
+											aria-label="insira o seu endereço de e-mail" value>
+										<div role="alert" class="login-error-message">
+											<span class="error-circle"> <span class="icon-error"
+													aria-hidden="true" role="none"> <svg width="16"
+														height="16" fill="currentColor" focusable="false"
+														viewBox="0 0 24 24">
+														<path
+															d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+														</path>
+													</svg>
+												</span>
+											</span>
+											<p id="error-email" class="login-error-message"></p>
+										</div>
+										<button class="btn-form" type="button">Próximo</button>
+									</form>
+								</div>
+							</div>
+						</section>
+
+						<!-- phone -->
+						<section id="ct-phone" class="slide">
+							<div class="section-wrapper">
+								<button class="back-button" type="button" aria-live="off">
+									<svg width="16" height="16" fill="currentColor" focusable="false"
+										viewBox="0 0 24 24">
+										<path
+											d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+										</path>
+									</svg>
+									<span class="back-button-text">Voltar</span>
+								</button>
+
+								<div class="ct-form">
+									<div class="title">
+										<h1>Informe seu telefone ou celular</h1>
+										<p>Isso nos ajudará a entrar em contato</p>
+									</div>
+
+									<form id="form-phone">
+										<label for="phone" class="states-number">Número de
+											telefone</label> <input id="phone" name="phone" autocomplete="phone"
+											type="text" class="form-input"
+											title="Insira seu numero de telefone"
+											aria-label="Insira seu numero de telefone"
+											oninput="applyPhoneMask(this)" maxlength="15" value>
+
+										<div role="alert" class="login-error-message">
+											<span class="error-circle"> <span class="icon-error"
+													aria-hidden="true" role="none"> <svg width="16"
+														height="16" fill="currentColor" focusable="false"
+														viewBox="0 0 24 24">
+														<path
+															d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
+														</path>
+													</svg>
+												</span>
+											</span>
+											<div role="alert" class="login-error-message" id="error-phone">
+											</div>
+										</div>
+										<button class="btn-form" type="button"
+											aria-label="Criar conta grátis" onclick="RegisterFormSubmit()">
+											Criar conta grátis
+
+											<svg class="spinner" width="18" height="18" viewBox="0 0 66 66"
+												xmlns="http://www.w3.org/2000/svg">
+												<circle class="path" fill="none" stroke-width="6"
+													stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+											</svg>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="conta-success-container">
+						<h2 id="nameRegister"
+							style="color: #032d60; font-size: 2.4rem; font-weight: 700; text-align: center; line-height: 1.2; text-transform: unset">
+							Verifique sua caixa de entrada no e-mail</h2>
+						<p style="text-align: center">Falta pouco para começar seu teste
+							de 14 dias grátis, acesse o link que enviamos no seu e-mail ou
+							WhatsApp.</p>
+						<img src="/sults/images/icones/register/email-fast-outline.webp"
+							loading="lazy" alt="E-mail Icone" width="68" height="68">
+
+						<p style="text-align: center">Enviamos um e-mail para:</p>
+
+						<p id="emailRegister"
+							style="text-align: center; color: #032d60; font-weight: 700; font-size: 1.5rem; margin-top: 0;">
+							Seu e-mail informado.</p>
+
+						<button type="button" class="register-button" style="width: 60%"
+							aria-label="Voltar para o site" onclick="window.location.href='/'">Voltar
+							para o site</button>
+
+						<p class="text-center">Não recebeu o e-mail? Verifique sua caixa
+							de spam ou tente novamente.</p>
+					</div>
+
+					<div id="errorModal" class="modal-contact">
+						<div class="modal-content">
+							<img src="/sults/images/icones/contato/error-modal-icon.webp"
+								loading="lazy" alt="E-mail Error Ícone" width="68" height="68">
+							<h4
+								style="color: rgba(3, 45, 96, 1); font-weight: 700; font-size: 1.5rem; text-align: center; margin-bottom: 0; line-height: 1.2">
+								Oops! Algo de errado aconteceu!</h4>
+							<p
+								style="color: rgba(95, 102, 108, 1); font-weight: 400; font-size: 1rem; text-align: center; margin-top: 0;">
+								Desculpe, não conseguimos processar sua solicitação, nossa equipe
+								será notificada. Por favor, tente novamente mais tarde.</p>
+
+							<button type="button" id="closeModalError" aria-label="Fechar Modal"
+								class="contact-button"
+								style="text-align: center; width: 100%">Fechar</button>
+						</div>
+					</div>
+				</main>
+				<div>
+				</main>
+				<script>
+				const prevBtns = document.querySelectorAll(".back-button");
+				const nextBtns = document.querySelectorAll(".btn-form");
+				const progress = document.querySelector(".progress-bar");
+				const formSteps = document.querySelectorAll(".slide");
+				const progressSteps = document.querySelectorAll(".steps.mobile .step");
+				const steps = document.querySelectorAll(".stepper .steps .step");
+			
+				let formStepNum = 0;
+			
+				function updateFormSteps() {
+					formSteps.forEach((formStep, index) => {
+						formStep.classList.toggle("active", index === formStepNum);
+						updateStepperVisibility();
+					});
+				}
+				
+				function updateStepperVisibility() {
+					const stepper = document.querySelector(".stepper");					
+					if (formStepNum > 0) {
+						stepper.style.display = "block";
+					}
+					else {
+						if (formStepNum === 0) {
+							stepper.style.display = "none";
+						}
+					}
+				}
+
+				
+window.addEventListener('resize', updateImg);
+
+
+window.addEventListener('load', updateImg);
+
+				function updateImg() {
+    const logoImg = document.querySelector(".header-logo");
+    const backButtonMobile = document.querySelector(".back-button.mobile");
+    const screenWidth = window.innerWidth;
+    
+    if (screenWidth <= 575) {
+        if (formStepNum > 0) {
+            logoImg.style.display = "none"; 
+            backButtonMobile.style.display = "flex"; 
+        } else {
+            logoImg.style.display = "block"; 
+            backButtonMobile.style.display = "none";
+        }
+    } else {
+
+        logoImg.style.display = "block"; 
+        backButtonMobile.style.display = "none";
+    }
+}
+
+				function updateProgressbar() {
+					const stepWidth = 100 / (progressSteps.length - 1);
+					const progressPercentage = stepWidth * formStepNum + "%";
+					progress.style.width = progressPercentage;
+			
+					steps.forEach((step, index) => {
+						if (index === formStepNum) {
+							step.classList.add("active");
+						} else {
+							step.classList.remove("active");
+						}
+					});
+				}
+			
+				function validateForm() {
+					let isValid = true;
+					const nameInput = document.querySelector("#name");
+					const companyInput = document.querySelector("#company");
+					const emailInput = document.querySelector("#email");
+					const phoneInput = document.querySelector("#phone");
+			
+					const name = nameInput.value;
+					const company = companyInput.value;
+					const email = emailInput.value;
+					const phone = phoneInput.value;
+			
+					if (formStepNum === 0) {
+						if (name === "") {
+							showError(nameInput, "error-name", "Nome: Preenchimento obrigatório");
+							isValid = false;
+						} else {
+							hideError(nameInput, "error-name");
+						}
+					}
+			
+					if (formStepNum === 1) {
+						if (company === "") {
+							showError(companyInput, "error-company", "Empresa: Preenchimento obrigatório");
+							isValid = false;
+						} else {
+							hideError(companyInput, "error-company");
+						}
+					}
+			
+					if (formStepNum === 2) {
+						if (email === "") {
+							showError(emailInput, "error-email", "E-mail: Preenchimento obrigatório");
+							isValid = false;
+						} else if (!validateEmailFormat(email)) {
+							showError(emailInput, "error-email", "O e-mail informado não é válido");
+							isValid = false;
+						} else {
+							hideError(emailInput, "error-email");
+						}
+					}
+			
+					if (formStepNum === 3) {  
+					const phoneInput = document.querySelector("#phone");
+					const errorDiv = document.getElementById("error-phone");
+
+					if (phoneInput.value === "") {
+						showError(phoneInput, "error-phone", "Telefone: Preenchimento obrigatório");
+						isValid = false;
+					} else if (!validatePhoneFormat(phoneInput.value)) {
+						showError(phoneInput, "error-phone", "O telefone informado não é válido");
+						isValid = false;
+					} else {
+						hideError(phoneInput, "error-phone");
+					}
+				}
+					return isValid;
+				}
+			
+				function showError(input, fieldId, message) {
+					const errorDiv = document.getElementById(fieldId);
+					const circle = input.parentElement.querySelector(".error-circle");
+			
+					if (errorDiv) {
+						errorDiv.textContent = message;
+						errorDiv.style.display = "block";
+						input.style.border = '3px solid #a8200f';
+						if (circle) {
+							circle.style.display = "flex";
+						}
+					}
+				}
+			
+				function hideError(input, fieldId) {
+					const errorDiv = document.getElementById(fieldId);
+					const circle = input.parentElement.querySelector(".error-circle");
+
+					if (errorDiv) {
+						errorDiv.textContent = "";
+						errorDiv.style.display = "none";
+						input.style.border = '';
+						if (circle) {
+							circle.style.display = "none";
+						}
+					}
+				}
+			
+				function RegisterFormSubmit(event) {
+					//event.preventDefault(); 
+
+					const name = document.querySelector("#name").value;
+					const company = document.querySelector("#company").value;
+					const email = document.querySelector("#email").value;
+					const phone = document.querySelector("#phone").value;
+			
+					if (!validateForm()) {
+						return;
+					}
+					
+					document.querySelector(".spinner").style.display = "inline-block";
+					sendAsgard(name, company, email, phone);
+				}
+			
+				function sendAsgard(name, company, email, phone) {
+					let xhr = new XMLHttpRequest();
+					xhr.open("POST", "https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo");
+					xhr.setRequestHeader("Content-Type", "application/json");
+			
+					xhr.onload = function () {
+						document.querySelector(".spinner").style.display = "none";
+			
+						if (xhr.status === 200) {
+							document.querySelector(".conta-success-container").style.display = "flex";
+							document.querySelector(".conta-register-container").style.display = "none";
+							document.querySelector("#nameRegister").textContent = name.split(' ')[0] + ", verifique sua caixa de entrada no e-mail";
+							document.querySelector("#emailRegister").textContent = email;
+							umami.track('Signup: Criação de conta');
+						} else {
+							document.getElementById("errorModal").style.display = "block";
+							umami.track('Erro ' + xhr.status + ': Criação de conta', {
+								Event: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+							});
+						}
+					};
+			
+					const payload = {
+						tituloNegocio: `${company} - ${name}`,
+						nome: name,
+						email: email,
+						celular: phone,
+						empresa: company,
+						responsavelId: 979,
+						campanhaId: null,
+						origemId: 1,
+						etapaId: 17,
+					};
+					xhr.send(JSON.stringify(payload));
+				}
+			
+				document.getElementById("closeModalError").onclick = function () {
+					document.getElementById("errorModal").style.display = "none";
+				};
+			
+				nextBtns.forEach((btn) => {
+					btn.addEventListener("click", (event) => {
+						event.preventDefault();
+						if (validateForm()) {
+							formStepNum++;
+							if (formStepNum >= formSteps.length) formStepNum = formSteps.length - 1;
+							updateFormSteps();
+							updateProgressbar();
+						}
+					});
+				});
+			
+				prevBtns.forEach((btn) => {
+					btn.addEventListener("click", () => {
+						formStepNum--;
+						if (formStepNum < 0) formStepNum = 0;
+						updateFormSteps();
+						updateProgressbar();
+					});
+				});
+			
+				function validateEmailFormat(email) {
+					const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					return regex.test(email);
+				}
+			
+				function validatePhoneFormat(phone) {
+					const regex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
+					return regex.test(phone);
+				}
+			
+				function applyPhoneMask(element) {
+					let value = element.value;
+					if (value.length <= 10) {
+						value = value.replace(/\D/g, "");
+						value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+						value = value.replace(/(\d{4})(\d)/, "$1-$2");
+					} else {""
+						value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+						value = value.replace(/(\d{5})(\d)/, "$1-$2");
+					}
+					element.value = value;
+				}
+				</script>
+			</body>
+		</html>
