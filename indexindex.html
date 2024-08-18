@@ -1010,10 +1010,8 @@ p {
 		if (phoneInput.value === "") {
 			showError(phoneInput, "error-phone", "Telefone: Preenchimento obrigatório");
 			isValid = false;
-		} else if (!validatePhoneFormat(phoneInput.value)) {
-			showError(phoneInput, "error-phone", "O telefone informado não é válido");
-			isValid = false;
-		} else {
+		} 
+		 else {
 			hideError(phoneInput, "error-phone");
 		}
 	}
@@ -1068,7 +1066,7 @@ p {
 
     function sendAsgard(name, company, email, phone) {
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo");
+        xhr.open("POST", "");
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.onload = function () {
