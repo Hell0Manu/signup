@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Finalizado</title>
-		<style>
+<html lang="pt-br">
+
+<head>
+<link rel="preload"
+	href="https://www.sults.com.br/sults/images/ilustracoes/primaria/criar-conta-fundo-sults.webp"
+	as="image">
+<jsp:include page="/sults/components/default/include_meta.jsp">
+	<jsp:param name="meta_title"
+		value="SULTS: Solicite agora uma avaliação gratuita" />
+	<jsp:param name="meta_description"
+		value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
+</jsp:include>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<link rel="preload"
+	href="https://www.sults.com.br/sults/images/ilustracoes/primaria/criar-conta-fundo-sults.webp"
+	as="image">
+<jsp:include page="/sults/components/default/include_meta.jsp">
+	<jsp:param name="meta_title"
+		value="SULTS: Solicite agora uma avaliação gratuita" />
+	<jsp:param name="meta_description"
+		value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
+</jsp:include>
+	<style>
 		/* ESTILOS GERAIS */	
 		button, input, select, a{
 			cursor: pointer;
@@ -51,6 +71,7 @@
 			align-items: center;
 			justify-content: center;
 		}
+
 
 		.close-btn:hover {
 			height: 48px;
@@ -119,6 +140,7 @@
 			border: none;
 			cursor:default;
 			background: none;
+			margin-right: 10px;
 			display: inline-block;
 		}
 
@@ -138,7 +160,7 @@
 		}
 
         .slide {
-			display: none; /*ALTERAR*/
+			display: none; 
         }
 
 		.section-wrapper {
@@ -167,6 +189,7 @@
 			background: none;
 			border-radius: 50px;
 			position: relative;
+			background-color: #00acac12;
         }
 
 		/* FORMULARIO */
@@ -265,6 +288,7 @@
 			padding: 0;
 			width: 100%;
 			border-top: none;
+			    font-size: .875rem;
 		}
 
 		.steps.mobile, .error-circle {
@@ -361,8 +385,9 @@
 		}
 
 		.ct-form label{
+		    margin: 0;
 			color: #5d7079;
-			font-size: .875rem;
+			font-size: 1rem;
 		}
 
 		@-webkit-keyframes rotator {
@@ -436,6 +461,15 @@
 			.back-button-text {
 				display: none;
 			}
+			.back-button:focus {
+				width: 48px;
+				height: 48px;
+				border-radius: 50%
+			}
+			.back-button {
+				left: 64px;
+   				 top: 5px;
+			}
 			.header-close-btn {
 				order: 1;
 			}
@@ -450,17 +484,20 @@
 			}
 		}
 
-		@media ( min-width : 575px) {
+		@media ( min-width : 765px) {
 			#logo-img, .back-button.mobile{
 				display: none;
 			}
 		}
 
-		@media ( max-width:575px) {
+		@media ( max-width:765px) {
 			.step-content, .steps .step, #logo-img-completa,.back-button{
 				display: none;
 			}
-			
+			.back-button {
+				left: 0;
+   				 top: 0;
+			}
 			.steps.mobile, .steps.mobile .step.active, .back-button.mobile{
 				display: flex;
 			}
@@ -493,10 +530,10 @@
 							<span class="step-label">Nome</span>
 						</div>
 						<div class="step" aria-current="step">
-							<span class="step-label">Nome da empresa</span>
+							<span class="step-label">Empresa</span>
 						</div>
 						<div class="step" aria-current="false">
-							<span class="step-label">E-mail corporativo</span>
+							<span class="step-label">E-mail</span>
 						</div>
 
 						<div class="step" aria-current="false">
@@ -520,9 +557,9 @@
 							</li>
 
 							<li class="step" aria-current="step" style="left: 25%;"><span
-									class="step-label">Nome da empresa</span></li>
+									class="step-label">Empresa</span></li>
 							<li class="step" aria-current="false" style="left: 65%;"><span
-									class="step-label">E-mail corporativo</span></li>
+									class="step-label">E-mail</span></li>
 
 							<li class="step" aria-current="false" style="left: 100%;"><span
 									class="step-label">Telefone</span></li>
@@ -538,7 +575,7 @@
 						<div class="ct-form">
 							<div class="title">
 								<h1>Crie sua conta SULTS grátis</h1>
-								<p>Centralize e aumente a eficiência em toda operação</p>
+								<p>Já tem uma conta? <a href="https://app.sults.com.br/">Fazer login</a></p>
 							</div>
 							<form id="form-nome">
 								<label for="name">Primeiro, insira seu nome</label> 
@@ -554,11 +591,11 @@
 								</div>
 								<button class="btn-form" type="button">Continuar</button>
 							</form>
-							<p class="termos"> Ao se cadastrar, você aceita os nossos 
+							<p class="termos">Ao criar sua conta você concorda com nossos
 								<a target="_blank" rel="noopener noreferrer" href="https://policies.sults.com.br/termos-de-uso">Termos de Uso</a> 
 								e a nossa 
 								<a target="_blank" rel="noopener noreferrer" href="https://policies.sults.com.br/politica-de-privacidade">Política de Privacidade
-								</a>.
+								</a>
 							</p>
 						</div>
 					</div>
@@ -646,7 +683,7 @@
 						<div class="ct-form">
 							<div class="title">
 								<h1>Informe seu telefone ou celular</h1>
-								<p>Isso nos ajudará a entrar em contato</p>
+								<p>Informe seu telefone ou celular com DDD. Isso nos ajudará a entrar em contato</p>
 							</div>
 
 							<form id="form-phone">
@@ -723,7 +760,6 @@
 				formSteps.forEach((formStep, index) => {
 					formStep.classList.toggle("active", index === formStepNum);
 					updateStepperVisibility();
-					backButtonVisibility();
 				});
 			}
 
@@ -732,7 +768,7 @@
 				const progressSteps = document.querySelectorAll(".steps.mobile .step");
 				const steps = document.querySelectorAll(".stepper .steps .step");
 				const progress = document.querySelector(".progress-bar");
-				const isMobile = window.innerWidth <= 575;
+				const isMobile = window.innerWidth <= 765;
 
 				const stepWidth = 100 / (progressSteps.length - 1);
 				const progressPercentage = stepWidth * formStepNum + "%";
@@ -777,7 +813,7 @@
 				const backButtonMobile = document.querySelector(".back-button.mobile");
 				const logoImg = document.querySelector(".header-logo");
 				const screenWidth = window.innerWidth;
-				if(screenWidth <= 575){
+				if(screenWidth <= 765){
 					if (formStepNum === 0) {
 						backButtonMobile.style.display = "none";
 						logoImg.style.display= "block";
@@ -792,7 +828,13 @@
 					backButtonMobile.style.display = "none";
 				}
 			}
+			window.addEventListener('resize', () => {
+			    backButtonVisibility();
+			    updateProgressbar(); 
+			});
+			
 			window.addEventListener('load', backButtonVisibility);
+
 
 			//BOTOES DE PREV E NEXT
 			const nextBtns = document.querySelectorAll(".btn-form");
@@ -804,6 +846,7 @@
 						if (formStepNum >= formSteps.length) formStepNum = formSteps.length - 1;
 						updateFormSteps();
 						updateProgressbar();
+						backButtonVisibility();
 					}
 				});
 			});
@@ -824,14 +867,7 @@
 				const company = document.querySelector("#company").value;
 				const email = document.querySelector("#email").value;
 				const phone = document.querySelector("#phone").value;
-				
-				console.log("RegisterFormSubmit");
-				console.log("Name:", name);
-				console.log("Company:", company);
-				console.log("Email:", email);
-				console.log("Phone:", phone);
 		
-				validateForm()
 				if (!validateForm()) {
 					return;
 				}
@@ -843,7 +879,8 @@
 			function sendAsgard(name, company, email, phone) {
 				let a = new XMLHttpRequest();
 				(a.withCredentials = !1),
-				a.open("POST", "https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo"),
+				a.open("POST", //"https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo"
+						),
 				a.setRequestHeader("Content-Type", "application/json"),
 				a.onload = function () {
 					if (a.status === 200) {
