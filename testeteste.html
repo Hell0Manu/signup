@@ -1,29 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 	<head>
-		<jsp:include page="/sults/components/default/include_meta.jsp">
-			<jsp:param name="meta_title"
-				value="SULTS: Solicite agora uma avaliação gratuita" />
-			<jsp:param name="meta_description"
-				value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
-		</jsp:include>
-		<!DOCTYPE html>
-		<html lang="pt-br">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
 
-			<head>
-				<link rel="preload"
-					href="https://www.sults.com.br/sults/images/ilustracoes/primaria/criar-conta-fundo-sults.webp"
-					as="image">
-				<jsp:include page="/sults/components/default/include_meta.jsp">
-					<jsp:param name="meta_title"
-						value="SULTS: Solicite agora uma avaliação gratuita" />
-					<jsp:param name="meta_description"
-						value="Faça agora mesmo um teste gratuito na plataforma SULTS | Solicite uma avaliação e experimente por 14 dias gratuitamente!" />
-				</jsp:include>
-				<style>
+		.slide.active {
+			display: block;
+		}
 
-							/* MENU */
+        .slide {
+			display: none; /*ALTERAR*/
+        }
+
+        .section-wrapper {
+			max-width: 800px;
+   			margin: 0 auto;
+        }
+       
+		.ct-form {
+		padding: 0 10%;
+		margin: 0 5%;
+		
+		}
+
+		.back-button {
+			display: block;
+			border: none;
+			font-size: 16px;
+			font-weight: 600;
+			background: none;
+			margin-left: 10px;
+			position: absolute;
+			text-decoration: underline;
+			text-underline-offset: .3em;
+        }
+
+		.back-button.mobile {
+			display: none;
+			position: relative;
+			border: none;	
+			background: none;
+			border-radius: 50px;
+        }
+
+        input {
+            width: 100%;
+            font-size: 16px;
+            margin-top: 0.5rem;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            box-sizing: border-box;
+            border: 2px solid #c9cbce;
+        }
+
+        .btn-form {
+            width: 100%;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 24px;
+            border-radius: 4px;
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(#00acac 0, #00acac 100%);
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+				
+		button, a, input, select {
+			cursor: pointer;
+		}
+
+		.form-title, .step-content p, .title, .progressbar li {
+			text-align: center;
+		}
+
+		a {
+			font-weight: 600;
+			color: #0f5da6;
+		}
+
+		/* ESTILOS GERAIS */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		button, a, input, select {
+			cursor: pointer;
+		}
+
+		.form-title, .step-content p, .title, .progressbar li {
+			text-align: center;
+		}
+
+		a {
+			font-weight: 600;
+			color: #0f5da6;
+		}
+
+		/* MENU */
 		.ct-navigation {
 			display: flex;
 			padding: 1.5rem 0;
@@ -131,65 +215,6 @@
 			font-weight: bold;
 		}
 
-		.slide.active {
-			display: block;
-		}
-
-        .slide {
-			display: none; /*ALTERAR*/
-        }
-
-        .section-wrapper {
-			max-width: 800px;
-   			margin: 0 auto;
-        }
-       
-		.ct-form {
-			padding: 0 10%;
-			margin: 0 5%;
-		}
-
-		.back-button {
-			/*display: block;*/
-			border: none;
-			font-size: 16px;
-			font-weight: 600;
-			background: none;
-			margin-left: 10px;
-			position: absolute;
-			text-decoration: underline;
-			text-underline-offset: .3em;
-        }
-
-		.back-button.mobile {
-			border: none;	
-			background: none;
-			border-radius: 50px;
-			position: relative;
-        }
-
-		/* ESTILOS GERAIS */
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
-
-		button, a, input, select {
-			cursor: pointer;
-		}
-
-		.form-title, .step-content p, .title, .progressbar li {
-			text-align: center;
-		}
-
-		a {
-			font-weight: 600;
-			color: #0f5da6;
-		}
-
-
-
 		/* FORMULARIO INICIAL */
 		.title h1 {
 			color: #000000;
@@ -290,16 +315,10 @@
 			margin: 20px auto 0;
 		}
 
-
-
-
 		p {
 			line-height: 155%;
 			color: rgb(69, 71, 69);
 		}
-
-
-		
 
 		/* ACCOUNT SELECTION */
 		.step-content {
@@ -331,20 +350,26 @@
 		}
 
 		@media ( min-width : 575px) {
-			
-			#logo-img, .back-button.mobile{
+			#logo-img{
 				display: none;
+			}
+			#logo-img-completa {
+				display: block;
+			}
+			.back-button.mobile {
+				display: block;
 			}
 		}
 
-		@media ( max-width:575px) {
-			.step-content, .steps .step, #logo-img-completa,.back-button{
+		@media ( max-width :575px) {
+			.step-content, .steps .step, #logo-img-completa, .back-button {
 				display: none;
 			}
-			
-	
-			.steps.mobile, .steps.mobile .step.active, .back-button.mobile{
+			.steps.mobile, .steps.mobile .step.active {
 				display: flex;
+			}
+			#logo-img {
+				display: block;
 			}
 		}
 
@@ -362,7 +387,7 @@
 			border-radius: 50%;
 			align-items: center;
 			justify-content: center;
-			background-color: #67a73614;
+			background-color: #16330014;
 		}
 
 		.icon-text {
@@ -389,7 +414,6 @@
 		.conta-success-container {
 			display: none;
 			padding: 3.25rem;
-			margin: 0 auto;
 			max-width: 700px;
 			border-radius: 12px;
 			align-items: center;
@@ -546,81 +570,82 @@
         }
 
     </style>
-			</head>
+	</head>
 
-			<body>
-				<header>
-					<nav class="ct-navigation">
-						<div class="ct-header">
-							<button class="back-button mobile close-btn" type="button"
-								aria-live="off">
-								<svg width="16" height="16" fill="currentColor" focusable="false"
+	<body>
+		<header>
+			<nav class="ct-navigation">
+				<div class="ct-header">
+					<button class="back-button mobile close-btn" type="button" aria-live="off">
+						<svg width="16" height="16" fill="currentColor" focusable="false"
+							viewBox="0 0 24 24">
+							<path
+								d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+							</path>
+						</svg>
+					</button>
+					<div class="header-logo">
+						<a href="https://www.sults.com.br/"> <img
+								id="logo-img-completa"
+								src="/sults/images/logo/sults/completa/sults-logo-oficial.svg"
+								width="95" height="24" alt="Logo SULTS"> <img id="logo-img"
+								src="/sults/images/logo/sults/simbolo/logo-sults-s-verdigris.svg"
+								width="40" height="40" alt="Logo SULTS">
+						</a>
+					</div>
+					<div class="steps mobile">
+						<div class="step clickable active" aria-current="false">
+							<span type="button" class="step-label">Nome</span>
+						</div>
+						<div class="step" aria-current="step">
+							<span class="step-label">Nome da empresa</span>
+						</div>
+						<div class="step" aria-current="false">
+							<span class="step-label">E-mail corporativo</span>
+						</div>
+
+						<div class="step" aria-current="false">
+							<span class="step-label">Telefone</span>
+						</div>
+					</div>
+					<div class="header-close-btn">
+						<a href="https://www.sults.com.br/">
+							<button type="button" class="close-btn" aria-label="Fechar">
+								<svg width="24" height="24" fill="currentColor" focusable="false"
 									viewBox="0 0 24 24">
 									<path
-										d="M22.286 11.316H4.629l7.114-7.114-1.2-1.2-8.572 8.571a.829.829 0 0 0 0 1.2l8.572 8.572 1.2-1.2-7.114-7.114h17.657v-1.715Z">
+										d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
 									</path>
 								</svg>
 							</button>
-							<div class="header-logo">
-								<a href="https://www.sults.com.br/"> <img
-										id="logo-img-completa"
-										src="/sults/images/logo/sults/completa/sults-logo-oficial.svg"
-										width="95" height="24" alt="Logo SULTS COMPLETA"> <img id="logo-img"
-										src="/sults/images/logo/sults/simbolo/logo-sults-s-verdigris.svg"
-										width="40" height="40" alt="Logo SULTS">
-								</a>
-							</div>
-							<div class="steps mobile">
-								<div class="step active" aria-current="false">
-									<span type="button" class="step-label">Nome</span>
-								</div>
-								<div class="step" aria-current="step">
-									<span class="step-label">Nome da empresa</span>
-								</div>
-								<div class="step" aria-current="false">
-									<span class="step-label">E-mail corporativo</span>
-								</div>
+						</a>
+					</div>
 
-								<div class="step" aria-current="false">
-									<span class="step-label">Telefone</span>
-								</div>
-							</div>
-							<div class="header-close-btn">
-								<a href="https://www.sults.com.br/">
-									<button type="button" class="close-btn" aria-label="Fechar">
-										<svg width="24" height="24" fill="currentColor" focusable="false"
-											viewBox="0 0 24 24">
-											<path
-												d="m19.629 5.915-1.2-1.2-6.257 6.257-6.258-6.257-1.2 1.2 6.258 6.257-6.258 6.257 1.2 1.2 6.258-6.257 6.257 6.257 1.2-1.2-6.258-6.257 6.258-6.257Z">
-											</path>
-										</svg>
-									</button>
-								</a>
-							</div>
-
-							<div class="stepper ">
-								<div class="progress">
-									<div class="progress-bar" style="width: 0%;"></div>
-								</div>
-
-								<ol class="steps">
-									<li class="step" aria-current="false" style="left: 0%;">
-										<button type="button" class="step-label">Nome</button>
-									</li>
-
-									<li class="step" aria-current="step" style="left: 25%;"><span
-											class="step-label">Nome da empresa</span></li>
-									<li class="step" aria-current="false" style="left: 65%;"><span
-											class="step-label">E-mail corporativo</span></li>
-
-									<li class="step" aria-current="false" style="left: 100%;"><span
-											class="step-label">Telefone</span></li>
-								</ol>
-							</div>
+					<div class="stepper ">
+						<div class="progress">
+							<div class="progress-bar" style="width: 0%;"></div>
 						</div>
-					</nav>
-				</header>
 
+						<ol class="steps">
+							<li class="step clickable" aria-current="false" style="left: 0%;">
+								<button type="button" class="step-label">Nome</button>
+							</li>
+
+							<li class="step" aria-current="step" style="left: 25%;"><span
+									class="step-label">Nome da empresa</span></li>
+							<li class="step" aria-current="false" style="left: 65%;"><span
+									class="step-label">E-mail corporativo</span></li>
+
+							<li class="step" aria-current="false" style="left: 100%;"><span
+									class="step-label">Telefone</span></li>
+						</ol>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="conta-register-container">
 				<main>
 					<div class="conta-register-container">
 						<section id="ct-nome" class="slide active">
@@ -653,11 +678,11 @@
 									</form>
 
 									<p class="termos">
-										Ao se cadastrar, você aceita os nossos 
-										<a target="_blank" href="https://policies.sults.com.br/termos-de-uso">Termos de Uso</a> e a nossa 
-										<a target="_blank" href="https://policies.sults.com.br/politica-de-privacidade">Política
-											de Privacidade
-										</a>.
+										Ao se cadastrar, você aceita os nossos <a target="_blank"
+											href="https://policies.sults.com.br/termos-de-uso">Termos de
+											Uso</a> e a nossa <a target="_blank"
+											href="https://policies.sults.com.br/politica-de-privacidade">Política
+											de Privacidade</a>.
 									</p>
 								</div>
 							</div>
@@ -790,7 +815,8 @@
 													</svg>
 												</span>
 											</span>
-										<div role="alert" class="login-error-message" id="error-phone"></div>
+											<div role="alert" class="login-error-message" id="error-phone">
+											</div>
 										</div>
 										<button class="btn-form" type="button"
 											aria-label="Criar conta grátis" onclick="RegisterFormSubmit()">
@@ -799,10 +825,11 @@
 											<svg class="spinner" width="18" height="18" viewBox="0 0 66 66"
 												xmlns="http://www.w3.org/2000/svg">
 												<circle class="path" fill="none" stroke-width="6"
-												stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+													stroke-linecap="round" cx="33" cy="33" r="30"></circle>
 											</svg>
 										</button>
 									</form>
+
 								</div>
 							</div>
 						</section>
@@ -849,88 +876,220 @@
 						</div>
 					</div>
 				</main>
-				<script>		
-				let formStepNum = 0;
-				
-				// ETAPAS BARRA DE PROGRESSO
-				//Muda a cor do texto da barra de progresso
+				<div>
+				</main>
+				<script>
+				const prevBtns = document.querySelectorAll(".back-button");
+				const nextBtns = document.querySelectorAll(".btn-form");
+				const progress = document.querySelector(".progress-bar");
 				const formSteps = document.querySelectorAll(".slide");
+				const progressSteps = document.querySelectorAll(".steps.mobile .step");
+				const steps = document.querySelectorAll(".stepper .steps .step");
+			
+				let formStepNum = 0;
+			
 				function updateFormSteps() {
 					formSteps.forEach((formStep, index) => {
 						formStep.classList.toggle("active", index === formStepNum);
 						updateStepperVisibility();
-						backButtonVisibility();
 					});
 				}
-
-				//Avança a linha de progresso
-				function updateProgressbar() {
-					const progressSteps = document.querySelectorAll(".steps.mobile .step");
-					const steps = document.querySelectorAll(".stepper .steps .step");
-					const progress = document.querySelector(".progress-bar");
-					const isMobile = window.innerWidth <= 575;
-
-					const stepWidth = 100 / (progressSteps.length - 1);
-					const progressPercentage = stepWidth * formStepNum + "%";
-					progress.style.width = progressPercentage;
-					
-					if (isMobile) {
-						progressSteps.forEach((step, index) => {
-							if (index === formStepNum) {
-								step.classList.add("active");
-								step.setAttribute('aria-current', 'step');
-							} else {
-								step.classList.remove("active");
-								step.removeAttribute('aria-current');
-							}
-						});
-					} else {
-						steps.forEach((step, index) => {
-							if (index === formStepNum) {
-								step.classList.add("active");
-								step.setAttribute('aria-current', 'step');
-							} else {
-								step.classList.remove("active");
-								step.removeAttribute('aria-current');
-							}
-						});
-					}
-				}
 				
-				//Mobile muda a imagem da nav para um button de prev
 				function updateStepperVisibility() {
-					const stepper = document.querySelector(".stepper");	
+					const stepper = document.querySelector(".stepper");					
 					if (formStepNum > 0) {
 						stepper.style.display = "block";
 					}
 					else {
-						stepper.style.display = "none";
-					}
-				}
-
-				//Muda o local do button prev caso mobile
-				function  backButtonVisibility() {
-					const backButtonMobile = document.querySelector(".back-button.mobile");
-					const logoImg = document.querySelector(".header-logo");
-					const screenWidth = window.innerWidth;
-					if(screenWidth <= 575){
 						if (formStepNum === 0) {
-							backButtonMobile.style.display = "none";
-							logoImg.style.display= "block";
+							stepper.style.display = "none";
 						}
-						else {
-							backButtonMobile.style.display = "block";
-							logoImg.style.display = "none";
-						}
-					}
-					else {
-						logoImg.style.display = "block";
-						backButtonMobile.style.display = "none";
 					}
 				}
 
-				//BOTOES DE PREV E NEXT
-				const nextBtns = document.querySelectorAll(".btn-form");
+				
+window.addEventListener('resize', updateImg);
+
+
+window.addEventListener('load', updateImg);
+
+				function updateImg() {
+    const logoImg = document.querySelector(".header-logo");
+    const backButtonMobile = document.querySelector(".back-button.mobile");
+    const screenWidth = window.innerWidth;
+    
+    if (screenWidth <= 575) {
+        if (formStepNum > 0) {
+            logoImg.style.display = "none"; 
+            backButtonMobile.style.display = "flex"; 
+        } else {
+            logoImg.style.display = "block"; 
+            backButtonMobile.style.display = "none";
+        }
+    } else {
+
+        logoImg.style.display = "block"; 
+        backButtonMobile.style.display = "none";
+    }
+}
+
+				function updateProgressbar() {
+					const stepWidth = 100 / (progressSteps.length - 1);
+					const progressPercentage = stepWidth * formStepNum + "%";
+					progress.style.width = progressPercentage;
+			
+					steps.forEach((step, index) => {
+						if (index === formStepNum) {
+							step.classList.add("active");
+						} else {
+							step.classList.remove("active");
+						}
+					});
+				}
+			
+				function validateForm() {
+					let isValid = true;
+					const nameInput = document.querySelector("#name");
+					const companyInput = document.querySelector("#company");
+					const emailInput = document.querySelector("#email");
+					const phoneInput = document.querySelector("#phone");
+			
+					const name = nameInput.value;
+					const company = companyInput.value;
+					const email = emailInput.value;
+					const phone = phoneInput.value;
+			
+					if (formStepNum === 0) {
+						if (name === "") {
+							showError(nameInput, "error-name", "Nome: Preenchimento obrigatório");
+							isValid = false;
+						} else {
+							hideError(nameInput, "error-name");
+						}
+					}
+			
+					if (formStepNum === 1) {
+						if (company === "") {
+							showError(companyInput, "error-company", "Empresa: Preenchimento obrigatório");
+							isValid = false;
+						} else {
+							hideError(companyInput, "error-company");
+						}
+					}
+			
+					if (formStepNum === 2) {
+						if (email === "") {
+							showError(emailInput, "error-email", "E-mail: Preenchimento obrigatório");
+							isValid = false;
+						} else if (!validateEmailFormat(email)) {
+							showError(emailInput, "error-email", "O e-mail informado não é válido");
+							isValid = false;
+						} else {
+							hideError(emailInput, "error-email");
+						}
+					}
+			
+					if (formStepNum === 3) {  
+					const phoneInput = document.querySelector("#phone");
+					const errorDiv = document.getElementById("error-phone");
+
+					if (phoneInput.value === "") {
+						showError(phoneInput, "error-phone", "Telefone: Preenchimento obrigatório");
+						isValid = false;
+					} else if (!validatePhoneFormat(phoneInput.value)) {
+						showError(phoneInput, "error-phone", "O telefone informado não é válido");
+						isValid = false;
+					} else {
+						hideError(phoneInput, "error-phone");
+					}
+				}
+					return isValid;
+				}
+			
+				function showError(input, fieldId, message) {
+					const errorDiv = document.getElementById(fieldId);
+					const circle = input.parentElement.querySelector(".error-circle");
+			
+					if (errorDiv) {
+						errorDiv.textContent = message;
+						errorDiv.style.display = "block";
+						input.style.border = '3px solid #a8200f';
+						if (circle) {
+							circle.style.display = "flex";
+						}
+					}
+				}
+			
+				function hideError(input, fieldId) {
+					const errorDiv = document.getElementById(fieldId);
+					const circle = input.parentElement.querySelector(".error-circle");
+
+					if (errorDiv) {
+						errorDiv.textContent = "";
+						errorDiv.style.display = "none";
+						input.style.border = '';
+						if (circle) {
+							circle.style.display = "none";
+						}
+					}
+				}
+			
+				function RegisterFormSubmit(event) {
+					//event.preventDefault(); 
+
+					const name = document.querySelector("#name").value;
+					const company = document.querySelector("#company").value;
+					const email = document.querySelector("#email").value;
+					const phone = document.querySelector("#phone").value;
+			
+					if (!validateForm()) {
+						return;
+					}
+					
+					document.querySelector(".spinner").style.display = "inline-block";
+					sendAsgard(name, company, email, phone);
+				}
+			
+				function sendAsgard(name, company, email, phone) {
+					let xhr = new XMLHttpRequest();
+					xhr.open("POST", "https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo");
+					xhr.setRequestHeader("Content-Type", "application/json");
+			
+					xhr.onload = function () {
+						document.querySelector(".spinner").style.display = "none";
+			
+						if (xhr.status === 200) {
+							document.querySelector(".conta-success-container").style.display = "flex";
+							document.querySelector(".conta-register-container").style.display = "none";
+							document.querySelector("#nameRegister").textContent = name.split(' ')[0] + ", verifique sua caixa de entrada no e-mail";
+							document.querySelector("#emailRegister").textContent = email;
+							umami.track('Signup: Criação de conta');
+						} else {
+							document.getElementById("errorModal").style.display = "block";
+							umami.track('Erro ' + xhr.status + ': Criação de conta', {
+								Event: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+							});
+						}
+					};
+			
+					const payload = {
+						tituloNegocio: `${company} - ${name}`,
+						nome: name,
+						email: email,
+						celular: phone,
+						empresa: company,
+						responsavelId: 979,
+						campanhaId: null,
+						origemId: 1,
+						etapaId: 17,
+					};
+					xhr.send(JSON.stringify(payload));
+				}
+			
+				document.getElementById("closeModalError").onclick = function () {
+					document.getElementById("errorModal").style.display = "none";
+				};
+			
 				nextBtns.forEach((btn) => {
 					btn.addEventListener("click", (event) => {
 						event.preventDefault();
@@ -943,7 +1102,6 @@
 					});
 				});
 			
-				const prevBtns = document.querySelectorAll(".back-button");
 				prevBtns.forEach((btn) => {
 					btn.addEventListener("click", () => {
 						formStepNum--;
@@ -952,173 +1110,29 @@
 						updateProgressbar();
 					});
 				});
-
-				//ENVIO DOS DADOS COLETADOS
-				function RegisterFormSubmit(event) {
-					const name = document.querySelector("#name").value;
-					const company = document.querySelector("#company").value;
-					const email = document.querySelector("#email").value;
-					const phone = document.querySelector("#phone").value;
-					
-					console.log("RegisterFormSubmit");
-				    console.log("Name:", name);
-				    console.log("Company:", company);
-				    console.log("Email:", email);
-				    console.log("Phone:", phone);
 			
-				    validateForm()
-					if (!validateForm()) {
-						return;
-					}
-					
-					document.querySelector(".spinner").style.display = "inline-block";
-					sendAsgard(name, company, email, phone);	
-				}
-			
-				function sendAsgard(name, company, email, phone) {
-					let a = new XMLHttpRequest();
-					(a.withCredentials = !1),
-					a.open("POST", /*"https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo"*/),
-					a.setRequestHeader("Content-Type", "application/json"),
-					a.onload = function () {
-						if (a.status === 200) {
-							document.querySelector(".spinner").style.display = "none";
-							document.querySelector(".conta-success-container").style.display = "flex";
-							document.querySelector(".conta-register-container").style.display = "none";
-							document.querySelector(".ct-navigation").style.display = "none";
-							document.querySelector("#nameRegister").textContent = name.split(' ')[0] + ", verifique sua caixa de entrada no e-mail";
-							document.querySelector("#emailRegister").textContent = email;
-							umami.track('Signup: Criação de conta');
-						} else {
-							document.getElementById("errorModal").style.display = "block";
-							umami.track('Erro ' + a.status + ': Criação de conta', {
-								Event: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo'})
-							});
-						}
-					};
-			
-					let r = {
-						tituloNegocio: company + " - " + name,
-						nome: name,
-						email: email,
-						celular: phone,
-						empresa: company,
-						responsavelId: 979,
-						campanhaId: null,
-						origemId: 1,
-						etapaId: 17,
-					};
-					a.send(JSON.stringify(r));
-				}
-			
-				document.getElementById("closeModalError").onclick = function () {
-				document.getElementById("errorModal").style.display = "none";
-				};
-			
-				//VALIDAÇÃO DOS DADOS DO FORMULARIO 
-				function validateForm() {
-					let isValid = true;
-					const nameInput = document.querySelector("#name");
-					const companyInput = document.querySelector("#company");
-					const emailInput = document.querySelector("#email");
-					const phoneInput = document.querySelector("#phone");
-					
-					
-					const name = nameInput.value;
-					const company = companyInput.value;
-					const email = emailInput.value;
-					const phone = phoneInput.value;
-			
-					if (formStepNum === 0) {
-						if (name === "") {
-							showError(nameInput, "error-name", "Nome: Preenchimento obrigatório");
-							isValid = false;
-						} else {
-							 clearErrors(nameInput, "error-name");
-						}
-					}
-			
-					if (formStepNum === 1) {
-						if (company === "") {
-							showError(companyInput, "error-company", "Empresa: Preenchimento obrigatório");
-							isValid = false;
-						} else {
-							clearErrors(companyInput, "error-company");
-						}
-					}
-			
-					if (formStepNum === 2) {
-						if (email === "") {
-							showError(emailInput, "error-email", "E-mail: Preenchimento obrigatório");
-							isValid = false;
-						} else if (!validateEmail(email)) {
-							showError(emailInput, "error-email", "O e-mail informado não é válido");
-							isValid = false;
-						} else {
-							 clearErrors(emailInput, "error-email");
-						}
-					}
-			
-					if (formStepNum === 3) {  
-						if (phoneInput.value === "") {
-							showError(phoneInput, "error-phone", "Telefone: Preenchimento obrigatório");
-							isValid = false;
-						} else {
-							if (!validatePhone(phoneInput.value)) {
-							showError(phoneInput, "error-phone", "O telefone informado não é válido");
-							isValid = false;
-							} else {
-								clearErrors(phoneInput, "error-phone");
-							}
-						}
-					}
-					return isValid;
-				}
-			
-				function showError(input, fieldId, message) {
-					const errorDiv = document.getElementById(fieldId);
-					const circle = input.parentElement.querySelector(".error-circle");
-					if (errorDiv) {
-						errorDiv.textContent = message;
-						errorDiv.style.display = "block";
-						input.style.border = '3px solid #a8200f';
-						circle.style.display = "flex";
-					}
-				}
-				
-				function clearErrors(input, fieldId) {
-					const errorDiv = document.getElementById(fieldId);
-					const circle = input.parentElement.querySelector(".error-circle");
-					if (errorDiv) {
-						errorDiv.textContent = "";
-						errorDiv.style.display = "none";
-						input.style.border = '';
-						circle.style.display = "none";
-					}
-				}
-
-				function validateEmail(email) {
+				function validateEmailFormat(email) {
 					const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 					return regex.test(email);
 				}
 			
-				function validatePhone(phone) {
+				function validatePhoneFormat(phone) {
 					const regex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
 					return regex.test(phone);
 				}
 			
 				function applyPhoneMask(element) {
-						let value = element.value;
+					let value = element.value;
+					if (value.length <= 10) {
 						value = value.replace(/\D/g, "");
-						if (value.length <= 10) {
-							value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
-							value = value.replace(/(\d{4})(\d)/, "$1-$2");
-						} else {
-							value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
-							value = value.replace(/(\d{5})(\d)/, "$1-$2");
-						}
-						element.value = value;
+						value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+						value = value.replace(/(\d{4})(\d)/, "$1-$2");
+					} else {""
+						value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+						value = value.replace(/(\d{5})(\d)/, "$1-$2");
 					}
+					element.value = value;
+				}
 				</script>
 			</body>
 		</html>
