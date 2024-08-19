@@ -23,64 +23,7 @@
 				</jsp:include>
 				<style>
 
-		.slide.active {
-			display: block;
-		}
-
-        .slide {
-			display: none; /*ALTERAR*/
-        }
-
-        .section-wrapper {
-			max-width: 800px;
-   			margin: 0 auto;
-        }
-       
-		.ct-form {
-			padding: 0 10%;
-			margin: 0 5%;
-		}
-
-		.back-button {
-			/*display: block;*/
-			border: none;
-			font-size: 16px;
-			font-weight: 600;
-			background: none;
-			margin-left: 10px;
-			position: absolute;
-			text-decoration: underline;
-			text-underline-offset: .3em;
-        }
-
-		.back-button.mobile {
-			border: none;	
-			background: none;
-			border-radius: 50px;
-			position: relative;
-        }
-
-		/* ESTILOS GERAIS */
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
-
-		button, a, input, select {
-			cursor: pointer;
-		}
-
-		.form-title, .step-content p, .title, .progressbar li {
-			text-align: center;
-		}
-
-		a {
-			font-weight: 600;
-			color: #0f5da6;
-		}
-
-		/* MENU */
+							/* MENU */
 		.ct-navigation {
 			display: flex;
 			padding: 1.5rem 0;
@@ -188,6 +131,65 @@
 			font-weight: bold;
 		}
 
+		.slide.active {
+			display: block;
+		}
+
+        .slide {
+			display: none; /*ALTERAR*/
+        }
+
+        .section-wrapper {
+			max-width: 800px;
+   			margin: 0 auto;
+        }
+       
+		.ct-form {
+			padding: 0 10%;
+			margin: 0 5%;
+		}
+
+		.back-button {
+			/*display: block;*/
+			border: none;
+			font-size: 16px;
+			font-weight: 600;
+			background: none;
+			margin-left: 10px;
+			position: absolute;
+			text-decoration: underline;
+			text-underline-offset: .3em;
+        }
+
+		.back-button.mobile {
+			border: none;	
+			background: none;
+			border-radius: 50px;
+			position: relative;
+        }
+
+		/* ESTILOS GERAIS */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		button, a, input, select {
+			cursor: pointer;
+		}
+
+		.form-title, .step-content p, .title, .progressbar li {
+			text-align: center;
+		}
+
+		a {
+			font-weight: 600;
+			color: #0f5da6;
+		}
+
+
+
 		/* FORMULARIO INICIAL */
 		.title h1 {
 			color: #000000;
@@ -288,10 +290,16 @@
 			margin: 20px auto 0;
 		}
 
+
+
+
 		p {
 			line-height: 155%;
 			color: rgb(69, 71, 69);
 		}
+
+
+		
 
 		/* ACCOUNT SELECTION */
 		.step-content {
@@ -354,7 +362,7 @@
 			border-radius: 50%;
 			align-items: center;
 			justify-content: center;
-			background-color: #16330014;
+			background-color: #67a73614;
 		}
 
 		.icon-text {
@@ -645,11 +653,11 @@
 									</form>
 
 									<p class="termos">
-										Ao se cadastrar, você aceita os nossos <a target="_blank"
-											href="https://policies.sults.com.br/termos-de-uso">Termos de
-											Uso</a> e a nossa <a target="_blank"
-											href="https://policies.sults.com.br/politica-de-privacidade">Política
-											de Privacidade</a>.
+										Ao se cadastrar, você aceita os nossos 
+										<a target="_blank" href="https://policies.sults.com.br/termos-de-uso">Termos de Uso</a> e a nossa 
+										<a target="_blank" href="https://policies.sults.com.br/politica-de-privacidade">Política
+											de Privacidade
+										</a>.
 									</p>
 								</div>
 							</div>
@@ -782,8 +790,7 @@
 													</svg>
 												</span>
 											</span>
-											<div role="alert" class="login-error-message" id="error-phone">
-											</div>
+										<div role="alert" class="login-error-message" id="error-phone"></div>
 										</div>
 										<button class="btn-form" type="button"
 											aria-label="Criar conta grátis" onclick="RegisterFormSubmit()">
@@ -792,11 +799,10 @@
 											<svg class="spinner" width="18" height="18" viewBox="0 0 66 66"
 												xmlns="http://www.w3.org/2000/svg">
 												<circle class="path" fill="none" stroke-width="6"
-													stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+												stroke-linecap="round" cx="33" cy="33" r="30"></circle>
 											</svg>
 										</button>
 									</form>
-
 								</div>
 							</div>
 						</section>
@@ -853,44 +859,48 @@
 					formSteps.forEach((formStep, index) => {
 						formStep.classList.toggle("active", index === formStepNum);
 						updateStepperVisibility();
-						teste();
+						backButtonVisibility();
 					});
 				}
 
 				//Avança a linha de progresso
 				function updateProgressbar() {
-					const steps = document.querySelectorAll(".stepper .steps .step");
 					const progressSteps = document.querySelectorAll(".steps.mobile .step");
+					const steps = document.querySelectorAll(".stepper .steps .step");
 					const progress = document.querySelector(".progress-bar");
+					const isMobile = window.innerWidth <= 575;
+
 					const stepWidth = 100 / (progressSteps.length - 1);
 					const progressPercentage = stepWidth * formStepNum + "%";
 					progress.style.width = progressPercentage;
-			
-					const isMobile = window.innerWidth <= 575;
+					
 					if (isMobile) {
 						progressSteps.forEach((step, index) => {
 							if (index === formStepNum) {
 								step.classList.add("active");
+								step.setAttribute('aria-current', 'step');
 							} else {
 								step.classList.remove("active");
+								step.removeAttribute('aria-current');
 							}
 						});
 					} else {
 						steps.forEach((step, index) => {
 							if (index === formStepNum) {
 								step.classList.add("active");
+								step.setAttribute('aria-current', 'step');
 							} else {
 								step.classList.remove("active");
+								step.removeAttribute('aria-current');
 							}
 						});
 					}
 				}
 				
-				//Quando mobile muda a imagem da nav para um button de prev
+				//Mobile muda a imagem da nav para um button de prev
 				function updateStepperVisibility() {
 					const stepper = document.querySelector(".stepper");	
-	
-					 if (formStepNum > 0) {
+					if (formStepNum > 0) {
 						stepper.style.display = "block";
 					}
 					else {
@@ -898,41 +908,28 @@
 					}
 				}
 
-				function teste() {
+				//Muda o local do button prev caso mobile
+				function  backButtonVisibility() {
 					const backButtonMobile = document.querySelector(".back-button.mobile");
 					const logoImg = document.querySelector(".header-logo");
 					const screenWidth = window.innerWidth;
-				
 					if(screenWidth <= 575){
 						if (formStepNum === 0) {
-							
 							backButtonMobile.style.display = "none";
 							logoImg.style.display= "block";
-							
 						}
 						else {
-							
 							backButtonMobile.style.display = "block";
 							logoImg.style.display = "none";
-				
 						}
 					}
 					else {
 						logoImg.style.display = "block";
 						backButtonMobile.style.display = "none";
 					}
-					
-
-					let size = screen.width;
-					console.log(size);
-
-
-
 				}
-				window.addEventListener('load', teste);
 
 				//BOTOES DE PREV E NEXT
-				
 				const nextBtns = document.querySelectorAll(".btn-form");
 				nextBtns.forEach((btn) => {
 					btn.addEventListener("click", (event) => {
@@ -958,8 +955,6 @@
 
 				//ENVIO DOS DADOS COLETADOS
 				function RegisterFormSubmit(event) {
-					//event.preventDefault(); 
-
 					const name = document.querySelector("#name").value;
 					const company = document.querySelector("#company").value;
 					const email = document.querySelector("#email").value;
@@ -982,11 +977,10 @@
 			
 				function sendAsgard(name, company, email, phone) {
 					let a = new XMLHttpRequest();
-					a.open("POST", /*"https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo"*/);
-					a.setRequestHeader("Content-Type", "application/json");
-			
+					(a.withCredentials = !1),
+					a.open("POST", /*"https://3sksqeptx3.execute-api.us-east-1.amazonaws.com/prod/site/request-demo"*/),
+					a.setRequestHeader("Content-Type", "application/json"),
 					a.onload = function () {
-						
 						if (a.status === 200) {
 							document.querySelector(".spinner").style.display = "none";
 							document.querySelector(".conta-success-container").style.display = "flex";
@@ -998,12 +992,12 @@
 						} else {
 							document.getElementById("errorModal").style.display = "block";
 							umami.track('Erro ' + a.status + ': Criação de conta', {
-								Event: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+								Event: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo'})
 							});
 						}
 					};
 			
-					const r = {
+					let r = {
 						tituloNegocio: company + " - " + name,
 						nome: name,
 						email: email,
@@ -1049,7 +1043,7 @@
 							showError(companyInput, "error-company", "Empresa: Preenchimento obrigatório");
 							isValid = false;
 						} else {
-							 clearErrors(companyInput, "error-company");
+							clearErrors(companyInput, "error-company");
 						}
 					}
 			
@@ -1084,28 +1078,22 @@
 				function showError(input, fieldId, message) {
 					const errorDiv = document.getElementById(fieldId);
 					const circle = input.parentElement.querySelector(".error-circle");
-			
 					if (errorDiv) {
 						errorDiv.textContent = message;
 						errorDiv.style.display = "block";
 						input.style.border = '3px solid #a8200f';
-						if (circle) {
-							circle.style.display = "flex";
-						}
+						circle.style.display = "flex";
 					}
 				}
 				
-				function  clearErrors(input, fieldId) {
+				function clearErrors(input, fieldId) {
 					const errorDiv = document.getElementById(fieldId);
 					const circle = input.parentElement.querySelector(".error-circle");
-
 					if (errorDiv) {
 						errorDiv.textContent = "";
 						errorDiv.style.display = "none";
 						input.style.border = '';
-						if (circle) {
-							circle.style.display = "none";
-						}
+						circle.style.display = "none";
 					}
 				}
 
